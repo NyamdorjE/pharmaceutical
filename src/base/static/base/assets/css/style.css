@@ -1961,7 +1961,7 @@ section {
 .counts::before {
   content: "";
   position: absolute;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(230, 242, 243, 0.8);
   left: 0;
   right: 0;
   top: 0;

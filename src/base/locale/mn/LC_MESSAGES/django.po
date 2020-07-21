@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-16 11:11+0800\n"
+"POT-Creation-Date: 2020-07-21 16:39+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: drug/settings/common.py:154
+msgid "Mongolia"
+msgstr ""
+
+#: drug/settings/common.py:155
+#: env/lib/python3.8/site-packages/tests/settings.py:44
+msgid "English"
+msgstr ""
 
 #: env/lib/python3.8/site-packages/bootstrap4/components.py:17
 #: env/lib/python3.8/site-packages/bootstrap4/templates/bootstrap4/form_errors.html:3
@@ -1271,6 +1280,10 @@ msgstr ""
 
 #: env/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:409
 msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: env/lib/python3.8/site-packages/tests/settings.py:45
+msgid "Brazilian Portuguese"
 msgstr ""
 
 #: src/accounts/forms.py:19
