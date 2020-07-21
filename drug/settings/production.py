@@ -12,7 +12,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pharma',
-        'USER': 'postgres',
+        'USER': 'pharmacist',
         'PASSWORD': '#DiyjoT42u#M',
         'HOST': 'localhost',
         'PORT': '5432'
