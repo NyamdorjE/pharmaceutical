@@ -1186,7 +1186,7 @@ section {
   display: block;
   font-size: 13px;
   font-weight: 400;
-  color: #aaaaaa;
+  color: #5f5c5c;
 }
 
 .team .member .member-info p {
@@ -2072,7 +2072,7 @@ section {
 }
 
 .blog .entry .entry-title {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   padding: 0;
   margin: 0 0 20px 0;

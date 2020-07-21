@@ -235,14 +235,14 @@
             <article class="entry">
 
               <div class="entry-img">
-                  <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}" ><img src="{% if news.image %}{{news.image.url}}{% endif %}" alt="" class="img-fluid"/>
+                  <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}" ><img src="{% if news.image %}{{news.image.url}}{% endif %}" alt="" style="width:320px; height: 200px;"/>
               </div>
 
-              <h2 class="entry-title">
+              <h5 class="entry-title">
                   <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}">
                        {{ news.title }}  
                   </a>
-              </h2>
+              </h5>
 
               <div class="entry-meta">
                 <ul>
