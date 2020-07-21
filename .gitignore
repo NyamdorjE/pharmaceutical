@@ -1,0 +1,12 @@
+*.pyc
+*~
+/.vscode
+__pycache__
+env
+db.sqlite3
+/static
+/media
+/__pycache__/
+/manage.py
+
+

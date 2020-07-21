@@ -1,0 +1,243 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+
+{% load widget_tweaks %}
+
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Эм холбоо ТББ</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="{% static 'base/assets/img/favicon.png" rel="icon' %}">
+  <link href="{% static 'base/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'base/assets/rs-plugin/css/settings.css' %}" media="screen" rel="stylesheet" type="text/css" />
+  <link href="{% static 'base/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'base/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'base/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'base/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'base/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'base/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'base/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'base/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Vesperr - v2.1.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <a href="{% url 'news-homepage' %}"><img src="{% static 'base/assets/images/logo.png' %}" alt="" /></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+         
+      
+
+          	{% with request.resolver_match.url_name as url_name %}
+                        <li  ><a style="padding-right: 15px;" href="{% url 'news-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
+
+                        <li class="drop-down"><a href="#">{% trans 'Бидний тухай' %}</a>
+                          <ul class="dl-submenu">
+                            <li><a href="{% url 'news-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
+                            <li><a href="{% url 'news-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
+                            <li>
+                              <a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a>  
+                            </li>
+                          </ul>
+                        </li>
+                        
+                        <li class="drop-down" ><a href="#">{% trans 'Мэдээ мэдээлэл' %}</a>
+                          <ul class="dl-submenu">
+                            <li><a href="{% url 'news-special-news' %}">{% trans 'Онцлох мэдээ' %}</a></li>
+                            <li><a href="{% url 'news-news-list' %}">{% trans 'Мэдээ мэдээлэл' %}</a></li>
+                            <li><a href="{% url 'news-sport-list' %}">{% trans 'Урлаг, Спорт' %}</a></li>
+                            <li><a href="{% url 'research-research-list' %}"> {% trans 'Судалгаа' %}</a></li>
+                          </ul>
+                        </li>
+
+                        <li class="drop-down"><a href="{% url 'courses:home'%}">{% trans 'Сургалт' %}</a>
+                        <ul class="dl-submenu">
+                            <li><a href="{% url 'contact' %}">{% trans 'Сургалт хүсэх' %}</a></li>
+                            <li><a href="{% url 'poll:poll'%}">{% trans 'Санал асуулга' %} </a></li>
+                       </ul>
+                        </li>
+
+                      
+                       
+                        <li class="drop-down"><a href="#">{% trans 'Хэрэглэгч' %}</a>
+                          <ul class="dl-submenu">
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'accounts:change_password' %}">{% trans 'Нууц үг солих' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'accounts:change_profile' %}">{% trans 'Нэр солих' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'accounts:change_email' %}">{% trans 'Имайл хаяг солих' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'accounts:log_out' %}">{% trans 'Системээс гарах' %}</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Нэвтрэх' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Гишүүнээр бүртгүүлэх' %}</a>
+                            </li>
+                        {% endif %}
+                          </ul>
+                        </li>
+                        <li class="get-started"><a href="{% url 'request' %}">{% trans 'Холбоо барих' %}</a></li>
+                    <li class="menu-language">
+                  <form action="/i18n/setlang/" method="post" id="langform" class="langform">
+                                         {% csrf_token %}
+                   {% if request.LANGUAGE_CODE == 'mn' %}
+                       <input type="hidden" name="language" value="en"/>
+                          <a class="lan" href="#" onclick="">{{request.LANGUAGE_CODE}}
+                      <img onclick="document.getElementById('langform').submit();" src="{% static 'base/assets/images/mn.png' %}">
+                             </a>
+                             {% else %}
+                              <input type="hidden" name="language" value="mn"/>
+                                     <a class="lan" href="#" >{{request.LANGUAGE_CODE}}
+                           <img onclick="document.getElementById('langform').submit();" src="{% static 'base/assets/images/en.png' %}">
+                           </a>
+                              {% endif %}
+                                       </form>
+                            </li>
+
+                 {% endwith %} 
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  <body>
+   <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Тавтай морилно уу  <span>ЭМ ХОЛБОО ТББ</spa>
+      </h1>
+      
+    </div>
+  </section><!-- End Hero -->
+  </body>
+{% block content %}
+
+
+{% endblock %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Холбоо барих<span>.</span></h3>
+            <p>
+              Сонгинохайрхан дүүрэг, 29-р хороо <br>
+             Үйлдвэрчний эвлэлийн гудамж,<br>
+              Улаанбаатар, Монгол Улс <br><br>
+              <strong>Утас:</strong> +(976) 9909-8752<br>
+              <strong>E-mail:</strong> mezbneh@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Хэрэгтэй холбоосууд</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news-homepage'%}">Нүүр хуудас</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news-news-list' %}">Мэдээ мэдээлэл</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Сургалт хүсэх</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'courses:home'%}">Сургалт</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'request' %}">Холбоо барих</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Үйлчилгээ</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Сургалт</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Зөвөлгөө</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Хүний нөөц</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Кридет сургалт</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Бидний цахим хаяг</h4>
+            <p>Хэрэгтэй мэдээлэл болон бусад мэдээлэлийг цахим хаягнаас авах боломжтой</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Эм холбоо</span></strong>. Зохиогчын эрхээр хамгаалагдав.
+      </div>
+      <div class="credits">
+       
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script type="text/javascript" src="{% static 'base/assets/rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'base/assets/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'base/assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'base/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
