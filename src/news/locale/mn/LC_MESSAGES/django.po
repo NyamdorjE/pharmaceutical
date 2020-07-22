@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 16:39+0800\n"
+"POT-Creation-Date: 2020-07-22 09:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,16 @@ msgstr "Мэдээ"
 #: src/news/models.py:12 src/news/models.py:37
 msgid "Title"
 msgstr "Гарчиг"
+
+#: src/news/models.py:22
+#, fuzzy
+#| msgid "Category"
+msgid "News category"
+msgstr "Ангиллал"
+
+#: src/news/models.py:23
+msgid "News categories"
+msgstr ""
 
 #: src/news/models.py:35
 msgid "Category"
@@ -49,6 +59,14 @@ msgstr "Хэзээ үүсгэсэн"
 #: src/news/models.py:47
 msgid "Updated on"
 msgstr "Хэзээ зассан"
+
+#: src/news/models.py:51
+msgid "Article"
+msgstr "Нийтлэл"
+
+#: src/news/models.py:52
+msgid "Articles"
+msgstr "Нийтлэлүүд"
 
 #: src/news/templates/news/homepage.html:52
 #: src/news/templates/news/index_2.html:64 src/news/templates/news/{% load

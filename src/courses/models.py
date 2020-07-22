@@ -10,8 +10,8 @@ class CourseCategory(models.Model):
     title = models.CharField(max_length=255, verbose_name=_('Title'))
 
     class Meta:
-        verbose_name = "Course category"
-        verbose_name_plural = "Courses category"
+        verbose_name = _("Курсын категори")
+        verbose_name_plural = _("Курсын категори")
         ordering = ['title']
 
     def __str__(self):
@@ -32,8 +32,8 @@ class Course(models.Model):
         max_length=150, verbose_name=_('Price'),  default="₮")
 
     class Meta:
-        verbose_name = "Course"
-        verbose_name_plural = "Courses"
+        verbose_name = _("Курс")
+        verbose_name_plural = _("Курс")
         ordering = ['title']
 
     def __str__(self):
@@ -55,8 +55,8 @@ class Subject(models.Model):
         upload_to='kurs_images', default='default', verbose_name=_('Upload picture'))
 
     class Meta:
-        verbose_name = "Subject"
-        verbose_name_plural = "Subjects"
+        verbose_name = _("Сэдэв")
+        verbose_name_plural = _("Сэдэв")
         ordering = ['title']
 
     def __str__(self):
@@ -93,8 +93,8 @@ class Lesson(models.Model):
         return reverse("courses:lesson_detail", kwargs={"course_slug": self.subject.slug, 'lesson_slug': self.slug})
 
     class Meta:
-        verbose_name = "Lesson"
-        verbose_name_plural = "Lessons"
+        verbose_name = _("Хичээл")
+        verbose_name_plural = _("Хичээл")
         ordering = ['title']
 
 

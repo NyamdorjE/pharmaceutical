@@ -19,8 +19,8 @@ class Category(models.Model):
         max_length=255, choices=category_type, default="news")
 
     class Meta:
-        verbose_name = "News category"
-        verbose_name_plural = "News category"
+        verbose_name = _("Мэдээ ангиллал")
+        verbose_name_plural = _("Мэдээ ангиллал")
         ordering = ['title']
 
     def __str__(self):
@@ -48,8 +48,8 @@ class News(models.Model):
     is_special = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name = "Article"
-        verbose_name_plural = "Articles"
+        verbose_name = _("Article")
+        verbose_name_plural = _("Articles")
         ordering = ['-created_on']
 
     def __str__(self):

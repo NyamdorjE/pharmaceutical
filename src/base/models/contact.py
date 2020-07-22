@@ -15,7 +15,8 @@ class Contact(models.Model):
     message = models.TextField()
 
     class Meta:
-        verbose_name = "Сургалт хүссэн "
+        verbose_name = _("Request Lesson")
+        verbose_name_plural = _("Request Lesson")
         ordering = ['name']
 
     def __str__(self):

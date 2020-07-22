@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 
 class Poll(models.Model):
@@ -12,3 +13,8 @@ class Poll(models.Model):
 
     def total(self):
         return self.option_one_count + self.option_two_count + self.option_three_count
+
+    class Meta:
+        verbose_name = _("Санал асуулга")
+        verbose_name_plural = _("Санал асуулга")
+        ordering = ['question']

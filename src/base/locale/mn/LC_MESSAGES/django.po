@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 16:39+0800\n"
+"POT-Creation-Date: 2020-07-22 09:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1420,7 +1420,7 @@ msgstr ""
 #: src/accounts/templates/accounts/emails/forgotten_username.html:15
 #: src/accounts/templates/accounts/emails/forgotten_username.txt:3
 msgid "Your username is:"
-msgstr ""
+msgstr "Таний нэр бол:"
 
 #: src/accounts/templates/accounts/emails/restore_password_email.html:15
 #: src/accounts/templates/accounts/emails/restore_password_email.txt:3
@@ -1506,7 +1506,7 @@ msgstr ""
 
 #: src/accounts/utils.py:19
 msgid "Profile activation"
-msgstr ""
+msgstr "Хаяг идэвхжлээ"
 
 #: src/accounts/utils.py:28
 msgid "Change email"
@@ -1573,6 +1573,10 @@ msgstr "Пассворт тохиргоо амжилттай боллоо"
 msgid "Base"
 msgstr "Үндсэн"
 
+#: src/base/models/contact.py:18 src/base/models/contact.py:19
+msgid "Request Lesson"
+msgstr "Хичээл хүсэх"
+
 #: src/base/models/drug.py:7
 msgid "Name"
 msgstr "Нэр"
@@ -1588,6 +1592,18 @@ msgstr "Ангилалууд"
 #: src/courses/models.py:10 src/courses/models.py:24 src/courses/models.py:46
 msgid "Title"
 msgstr "Гарчиг"
+
+#: src/courses/models.py:13
+#, fuzzy
+#| msgid "Category"
+msgid "Course category"
+msgstr "Ангилал"
+
+#: src/courses/models.py:14
+#, fuzzy
+#| msgid "Categories"
+msgid "Course categories"
+msgstr "Ангилалууд"
 
 #: src/courses/models.py:26 src/courses/models.py:51
 msgid "Description"
@@ -1605,15 +1621,21 @@ msgstr "Сурагчид"
 msgid "Price"
 msgstr "Үнэ"
 
+#: src/courses/models.py:35 src/courses/models.py:49
+msgid "Course"
+msgstr "Курс"
+
+#: src/courses/models.py:36
+#, fuzzy
+#| msgid "Course"
+msgid "Courses"
+msgstr "Курс"
+
 #: src/courses/models.py:45
 #, fuzzy
 #| msgid "Created by"
 msgid "Created by "
 msgstr "Үүсгэсэн"
-
-#: src/courses/models.py:49
-msgid "Course"
-msgstr "Курс"
 
 #: src/courses/models.py:53
 #, fuzzy
@@ -1625,13 +1647,19 @@ msgstr "Үүсгэсэн огноо"
 msgid "Upload picture"
 msgstr "Зураг хийх"
 
+#: src/courses/models.py:58 src/courses/models.py:81
+msgid "Subject"
+msgstr "Сэдэв"
+
+#: src/courses/models.py:59
+#, fuzzy
+#| msgid "Subject"
+msgid "Subjects"
+msgstr "Сэдэв"
+
 #: src/courses/models.py:78
 msgid " Lesson title"
 msgstr "Хичээлийн гарчиг"
-
-#: src/courses/models.py:81
-msgid "Subject"
-msgstr "Сэдэв"
 
 #: src/courses/models.py:83
 msgid "Upload video"
@@ -1645,7 +1673,19 @@ msgstr "Тэкст"
 msgid "Lesson position"
 msgstr "Хичээлийн байрлах байрлал"
 
-#: src/research/apps.py:6
+#: src/courses/models.py:96
+#, fuzzy
+#| msgid " Lesson title"
+msgid "Lesson"
+msgstr "Хичээлийн гарчиг"
+
+#: src/courses/models.py:97
+#, fuzzy
+#| msgid "Lesson position"
+msgid "Lessons"
+msgstr "Хичээлийн байрлах байрлал"
+
+#: src/research/apps.py:6 src/research/models.py:29
 msgid "Research"
 msgstr "Судалгаа"
 
@@ -1653,6 +1693,18 @@ msgstr "Судалгаа"
 #, fuzzy
 #| msgid "Category"
 msgid "Research Category "
+msgstr "Ангилал"
+
+#: src/research/models.py:11
+#, fuzzy
+#| msgid "Category"
+msgid "Research category"
+msgstr "Ангилал"
+
+#: src/research/models.py:12
+#, fuzzy
+#| msgid "Category"
+msgid "Research categorys"
 msgstr "Ангилал"
 
 #: src/research/models.py:20 src/research/models.py:51
@@ -1679,9 +1731,27 @@ msgstr ""
 msgid "Хэзээ засварласан"
 msgstr ""
 
+#: src/research/models.py:30
+#, fuzzy
+#| msgid "Research"
+msgid "Researchs"
+msgstr "Судалгаа"
+
 #: src/research/models.py:38
 msgid "Хууль тогтоомж "
 msgstr ""
+
+#: src/research/models.py:41
+#, fuzzy
+#| msgid "Legislation Category"
+msgid "Legislation category"
+msgstr "Хууль тогтоомж ангилал"
+
+#: src/research/models.py:42
+#, fuzzy
+#| msgid "Legislation Category"
+msgid "legislation categorys"
+msgstr "Хууль тогтоомж ангилал"
 
 #: src/research/models.py:50
 msgid "Хууль бүлэг"
@@ -1691,9 +1761,17 @@ msgstr ""
 msgid "Файл хийх"
 msgstr ""
 
-#: src/research/models.py:58 src/research/models.py:59
-msgid "Хууль тогтоомж"
-msgstr ""
+#: src/research/models.py:58
+#, fuzzy
+#| msgid "Legislation"
+msgid "legislation"
+msgstr "Хууль тогтоомж"
+
+#: src/research/models.py:59
+#, fuzzy
+#| msgid "Legislation"
+msgid "legislations"
+msgstr "Хууль тогтоомж"
 
 #~ msgid "Created by"
 #~ msgstr "Үүсгэсэн"
@@ -1714,9 +1792,6 @@ msgstr ""
 #~ msgid "Legislation "
 #~ msgstr "Хууль тогтоомж"
 
-#~ msgid "Legislation Category"
-#~ msgstr "Хууль тогтоомж ангилал"
-
 #, fuzzy
 #~| msgid "Pdf file"
 #~ msgid "Upload file"
@@ -1724,9 +1799,6 @@ msgstr ""
 
 #~ msgid "Updated at"
 #~ msgstr "Зассан огноо"
-
-#~ msgid "Legislation"
-#~ msgstr "Хууль тогтоомж"
 
 #~ msgid "Username already exist."
 #~ msgstr "Нэвтрэх нэр үүссэн байна"
