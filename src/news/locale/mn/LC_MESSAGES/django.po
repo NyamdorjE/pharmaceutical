@@ -134,8 +134,7 @@ msgstr "News and information"
 
 #: src/news/templates/news/homepage.html:150
 msgid "Гишүүн байгууллагууд"
-msgstr "Member organizations
-"
+msgstr "Member organizations"
 
 #: src/news/templates/news/homepage.html:155
 msgid "Гишүүдийн тоо"
