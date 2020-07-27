@@ -48,7 +48,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <a href="{% url 'news-homepage' %}"><img src="{% static 'base/assets/images/logo.png' %}" alt="" /></a></h1>
+        <a href="{% url 'website-homepage' %}"><img src="{% static 'base/assets/images/logo.png' %}" alt="" /></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -56,15 +56,14 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
          
-      
-
+                  
           	{% with request.resolver_match.url_name as url_name %}
-                        <li  ><a style="padding-right: 15px;" href="{% url 'news-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
+                        <li  ><a style="padding-right: 15px;" href="{% url 'website-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
 
                         <li class="drop-down"><a href="#">{% trans 'Бидний тухай' %}</a>
                           <ul class="dl-submenu">
-                            <li><a href="{% url 'news-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
-                            <li><a href="{% url 'news-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
+                            <li><a href="{% url 'website-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
+                            <li><a href="{% url 'website-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
                             <li>
                               <a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a>  
                             </li>
@@ -146,7 +145,9 @@
       </h1>
       
     </div>
-  </section><!-- End Hero -->
+  </section>
+  
+  <!-- End Hero -->
   </body>
 {% block content %}
 
@@ -175,7 +176,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Хэрэгтэй холбоосууд</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news-homepage'%}">Нүүр хуудас</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website-homepage'%}">Нүүр хуудас</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news-news-list' %}">Мэдээ мэдээлэл</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Сургалт хүсэх</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'courses:home'%}">Сургалт</a></li>

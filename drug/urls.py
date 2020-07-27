@@ -21,6 +21,7 @@ from src.poll import views as poll_views
 from django.contrib.auth import views as auth_views
 from django.conf.urls import include, url
 from src.accounts import views as user_views
+from src.website import views as website_views
 from src.courses import views as courses_views
 from src.base.models import contact
 from src.base.models import request
@@ -32,6 +33,7 @@ urlpatterns = [
     path('', include('src.research.urls')),
     path('', include('src.poll.urls')),
     path('', include('src.courses.urls')),
+    path('', include('src.website.urls')),
     path('contact/', contact.contact, name='contact'),
     path('request/', request.request, name='request'),
     url(r'^accounts/', include('registration.backends.default.urls')),

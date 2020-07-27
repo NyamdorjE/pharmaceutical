@@ -68,7 +68,7 @@
           <nav>
             <div class="container">
               <div class="row">
-                <div class="col-lg-3 pull-left"><div class="logo"><a href="{% url 'news-homepage' %}"><img src="{% static 'base/assets/images/logo.png' %}" alt="" /></a></div></div>
+                <div class="col-lg-3 pull-left"><div class="logo"><a href="{% url 'website-homepage' %}"><img src="{% static 'base/assets/images/logo.png' %}" alt="" /></a></div></div>
                 <div class="col-lg-9 pull-right">
                   <div class="menu">
                     <div id="dl-menu" class="dl-menuwrapper">
@@ -79,12 +79,12 @@
                 	{% with request.resolver_match.url_name as url_name %}
 
                       <ul class="dl-menu">
-                        <li class="active" ><a style="padding-right: 15px;" href="{% url 'news-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
+                        <li class="active" ><a style="padding-right: 15px;" href="{% url 'website-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
 
                         <li class="dropdown active"><a href="#">{% trans 'Бидний тухай' %}</a>
                           <ul class="dl-submenu">
-                            <li><a href="{% url 'news-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
-                            <li><a href="{% url 'news-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
+                            <li><a href="{% url 'website-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
+                            <li><a href="{% url 'website-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
                             <li>
                               <a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a>  
                             </li>
@@ -294,7 +294,7 @@
               <div class="promo-text-footer">{% trans 'Хэрэгтэй холбоосууд'%} </div>
                 <ul class="list ">
                   <li class="list" style="padding-bottom: 8px;"><a href="#" style="padding-bottom: 10px;color: #5f5454;"></a></li>
-                  <li class="list" style="padding-bottom: 8px;"><a href="{% url 'news-homepage'%}" style="padding-bottom: 10px;color: #5f5454;">Нүүр хуудас</a></li>
+                  <li class="list" style="padding-bottom: 8px;"><a href="{% url 'website-homepage'%}" style="padding-bottom: 10px;color: #5f5454;">Нүүр хуудас</a></li>
                   <li class="list" style="padding-bottom: 8px;"><a href="{% url 'news-news-list' %}" style="padding-bottom: 10px;color: #5f5454;">Мэдээ мэдээлэл</a></li>
                   <li class="list" style="padding-bottom: 8px;"><a href="{% url 'contact' %}" style="padding-bottom: 10px; color: #5f5454;">Сургалт хүсэх</a></li>         
                   <li class="list" style="padding-bottom: 8px;"><a href="{% url 'courses:home'%}" style="padding-bottom: 10px;color: #5f5454;">Сургалт</a></li>
@@ -330,8 +330,8 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-ms-12 pull-right">
                 <div class="foot_menu">
                   <ul>
-                    <li><a href="{% url 'news-homepage'%}">{% trans 'Нүүр хуудас' %}</a></li>
-                    <li><a href="{% url 'news-about-page' %}">{% trans 'Бидний тухай' %}</a></li>
+                    <li><a href="{% url 'website-homepage'%}">{% trans 'Нүүр хуудас' %}</a></li>
+                    <li><a href="{% url 'website-about-page' %}">{% trans 'Бидний тухай' %}</a></li>
                     <li><a href="{% url 'news-news-list' %}">{% trans 'Мэдээ' %}</a></li>
                     <li><a href="{% url 'accounts:sign_up' %}">{% trans 'Гишүүнчлэл' %}</a></li>
                     <li><a href="{% url 'request' %}" target="_blank">{% trans 'Холбоо барих' %}</a></li>

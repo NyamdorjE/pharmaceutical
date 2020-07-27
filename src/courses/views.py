@@ -21,10 +21,6 @@ class HomeView(TemplateView):
         return context
 
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
-
-
 def CourseListView(request, category):
     courses = Subject.objects.filter(course=category)
     context = {

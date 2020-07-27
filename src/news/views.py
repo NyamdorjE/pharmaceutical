@@ -55,64 +55,6 @@ class NewsDetail(generic.DetailView):
         return context
 
 
-class Homepage(generic.ListView):
-    queryset = News.objects.all().order_by('created_on')
-    template_name = 'news/homepage.html'
-    paginate_by = 6
-
-    def get_context_data(self, **kwargs):
-        context = super(Homepage, self).get_context_data(**kwargs)
-        context['special'] = News.objects.filter(is_special='True')
-        context['category'] = Course.objects.all()
-        context['news'] = News.objects.all().order_by('-created_on')
-
-        return context
-
-    # def get_context_data(self, **kwargs):
-    #     context = super(Homepage, self).get_context_data(**kwargs)
-    #     context['category_list'] = Category.objects.all()
-    #     context['research'] = Research.objects.all().order_by('-created_on')
-    #     context['lesson'] = Courses.objects.all().order_by('-created_on')
-
-    #     return context
-
-
-class TimeLine(generic.ListView):
-    template_name = "news/timeline.html"
-    queryset = News.objects.all().order_by('created_on')
-    paginate_by = 6
-
-    def get_context_data(self, **kwargs):
-        context = super(TimeLine, self).get_context_data(**kwargs)
-        context['special'] = News.objects.filter(is_special='True')
-        context['category'] = Course.objects.all()
-        context['news'] = News.objects.all().order_by('-created_on')
-
-        return context
-
-# class BasePage(TemplateView):
-#     queryset = News.objects.all().order_by('-created_on')
-#     template_name = "poll/base.html"
-
-
-class AboutPage(TemplateView):
-    template_name = "news/services.html"
-    queryset = News.objects.all().order_by('created_on')
-    paginate_by = 6
-
-    def get_context_data(self, **kwargs):
-        context = super(AboutPage, self).get_context_data(**kwargs)
-        context['special'] = News.objects.filter(is_special='True')
-        context['category'] = Course.objects.all()
-        context['news'] = News.objects.all().order_by('-created_on')
-
-        return context
-
-
-class Greetings(TemplateView):
-    template_name = "news/greetings.html"
-
-
 class SportList(generic.ListView):
     queryset = News.objects.filter(category="2")
     template_name = 'news/sport.html'

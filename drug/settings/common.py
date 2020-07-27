@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'src.research.apps.ResearchConfig',
     'src.courses.apps.CoursesConfig',
     'src.poll.apps.PollConfig',
+    'src.website.apps.WebsiteConfig',
     'widget_tweaks',
     'ckeditor',
     'registration',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
     'haystack',
     'elasticsearch',
     'bootstrap4',
+    'sorl.thumbnail',
 
 
 ]
