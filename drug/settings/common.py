@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'haystack',
     'elasticsearch',
     'bootstrap4',
+    'sorl.thumbnail',
 
 
 ]
