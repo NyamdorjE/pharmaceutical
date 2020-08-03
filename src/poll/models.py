@@ -15,6 +15,6 @@ class Poll(models.Model):
         return self.option_one_count + self.option_two_count + self.option_three_count
 
     class Meta:
-        verbose_name = _("Санал асуулга")
-        verbose_name_plural = _("Санал асуулга")
+        verbose_name = _("Poll")
+        verbose_name_plural = _("Polls")
         ordering = ['question']

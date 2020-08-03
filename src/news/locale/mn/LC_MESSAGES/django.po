@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 09:28+0800\n"
+"POT-Creation-Date: 2020-08-03 14:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,11 @@ msgstr "Мэдээ"
 msgid "Title"
 msgstr "Гарчиг"
 
-#: src/news/models.py:22
+#: src/news/models.py:22 src/news/models.py:23
 #, fuzzy
-#| msgid "Category"
-msgid "News category"
-msgstr "Ангиллал"
-
-#: src/news/models.py:23
-msgid "News categories"
-msgstr ""
+#| msgid "Мэдээ мэдээлэл"
+msgid "Мэдээ ангиллал"
+msgstr "News and information"
 
 #: src/news/models.py:35
 msgid "Category"
@@ -68,235 +64,156 @@ msgstr "Нийтлэл"
 msgid "Articles"
 msgstr "Нийтлэлүүд"
 
-#: src/news/templates/news/homepage.html:52
-#: src/news/templates/news/index_2.html:64 src/news/templates/news/{% load
+#: src/news/templates/news/homepage.html:31
+#: src/news/templates/news/index_2.html:63 src/news/templates/news/{% load
 #: static %}.html:84 %}.html:334
 msgid "Бидний тухай"
 msgstr "About us"
 
-#: src/news/templates/news/homepage.html:62
-#: src/news/templates/news/homepage.html:64
+#: src/news/templates/news/homepage.html:40
+#: src/news/templates/news/homepage.html:42
 msgid "Ullamco laboris nisi ut aliquip ex ea commodo consequat"
 msgstr ""
 
-#: src/news/templates/news/homepage.html:63
+#: src/news/templates/news/homepage.html:41
 msgid "Duis aute irure dolor in reprehenderit in voluptate velit"
 msgstr ""
 
-#: src/news/templates/news/homepage.html:87
-msgid "Эрхэм зорилго"
-msgstr "Mission"
-
-#: src/news/templates/news/homepage.html:89
-msgid ""
-"Mонгол улсын эрүүл мэндийн байгууллага, хүн амд мэдлэг, ур чадвар, хандлага "
-"шингэсэн чанартай эм зүйн тусламж, үйлчилгээг хүргэх, гишүүн байгууллагын "
-"нийтлэг эрх ашгийг хамгаалах, эмийн мэргэжилтнүүдийн дуу хоолой байх"
-msgstr ""
-
-#: src/news/templates/news/homepage.html:101
-msgid "Алсын хараа"
-msgstr "Vision"
-
-#: src/news/templates/news/homepage.html:102
-msgid "Mонголын эм зүйн хөгжлийг олон улсын түвшинд хүргэх"
-msgstr "Bring Mongolia's pharmaceutical development to the international level"
-
-#: src/news/templates/news/homepage.html:108
-msgid "Үнэт зүйл"
-msgstr "Values"
-
-#: src/news/templates/news/homepage.html:110
-msgid "Манлайлал"
-msgstr "Leadership"
-
-#: src/news/templates/news/homepage.html:111
-msgid "Эв нэгдэл"
-msgstr "Unity"
-
-#: src/news/templates/news/homepage.html:112
-#, fuzzy
-#| msgid "Гишүүнчлэл"
-msgid "Шинэчлэл"
-msgstr "Members"
-
-#: src/news/templates/news/homepage.html:119
-#, fuzzy
-#| msgid "Бидний тухай"
-msgid "Бидний уриа"
-msgstr "About us"
-
-#: src/news/templates/news/homepage.html:121
-#, fuzzy
-#| msgid "Гишүүдийн тоо"
-msgid "Гишүүдийн эрх ашиг"
-msgstr "Member organizations"
-
-#: src/news/templates/news/homepage.html:122
-msgid "Чадварлаг мэргэжилтэн"
-msgstr "Skilled specialist"
-
-#: src/news/templates/news/homepage.html:123
-msgid "Чанартай бүтээгдэхүүн"
-msgstr "Quality products"
-
-#: src/news/templates/news/homepage.html:124
-msgid "Чин сэтгэлийн хандлага"
-msgstr "Sincere attitude"
-
-#: src/news/templates/news/homepage.html:142
+#: src/news/templates/news/homepage.html:100
 #, fuzzy
 #| msgid "Мэдээ мэдээлэл"
 msgid "Статик тоон мэдээлэл"
 msgstr "News and information"
 
-#: src/news/templates/news/homepage.html:150
-msgid "Гишүүн байгууллагууд"
-msgstr "Member organizations"
-
-#: src/news/templates/news/homepage.html:155
-msgid "Гишүүдийн тоо"
-msgstr "Member organizations"
-
-#: src/news/templates/news/homepage.html:160
-msgid "Хийгдсэн үйл ажиллагаа"
-msgstr "Activities performed"
-
-#: src/news/templates/news/homepage.html:165
-#, fuzzy
-#| msgid "Сургалт хүсэх"
-msgid "Уулзалт хурал"
-msgstr "Course whislist"
-
-#: src/news/templates/news/homepage.html:179
+#: src/news/templates/news/homepage.html:118
 #: src/news/templates/news/services.html:38
 msgid "Үйл ажиллагаа"
 msgstr "Activities"
 
-#: src/news/templates/news/homepage.html:188
+#: src/news/templates/news/homepage.html:127
 #: src/news/templates/news/services.html:46
 msgid "Гишүүд"
 msgstr "Members"
 
-#: src/news/templates/news/homepage.html:196
-#: src/news/templates/news/homepage.html:228
-#: src/news/templates/news/index_2.html:74
-#: src/news/templates/news/index_2.html:77
+#: src/news/templates/news/homepage.html:135
+#: src/news/templates/news/homepage.html:165
+#: src/news/templates/news/index_2.html:73
+#: src/news/templates/news/index_2.html:76
 #: src/news/templates/news/services.html:55 src/news/templates/news/{% load
 #: static %}.html:94 %}.html:97
 msgid "Мэдээ мэдээлэл"
 msgstr "News and information"
 
-#: src/news/templates/news/homepage.html:204
-#: src/news/templates/news/index_2.html:69
+#: src/news/templates/news/homepage.html:143
+#: src/news/templates/news/index_2.html:68
 #: src/news/templates/news/services.html:63 src/news/templates/news/{% load
 #: static %}.html:89
 msgid "Хууль тогтоомж"
 msgstr "Legislation"
 
-#: src/news/templates/news/homepage.html:212
-#: src/news/templates/news/index_2.html:79
+#: src/news/templates/news/homepage.html:151
+#: src/news/templates/news/index_2.html:78
 #: src/news/templates/news/services.html:71 src/news/templates/news/{% load
 #: static %}.html:99
 msgid "Судалгаа"
 msgstr "Research"
 
-#: src/news/templates/news/homepage.html:258
+#: src/news/templates/news/homepage.html:190
 msgid "Цааш үзэх"
 msgstr "Read more"
 
-#: src/news/templates/news/homepage.html:276
+#: src/news/templates/news/homepage.html:207
 #, fuzzy
 #| msgid "Холбоо барих"
 msgid "Холбоос"
 msgstr "Contact us"
 
-#: src/news/templates/news/homepage.html:340
-#: src/news/templates/news/index_2.html:83 src/news/templates/news/{% load
+#: src/news/templates/news/homepage.html:266
+#: src/news/templates/news/index_2.html:82 src/news/templates/news/{% load
 #: static %}.html:103
 msgid "Сургалт"
 msgstr "Course"
 
-#: src/news/templates/news/homepage.html:434
+#: src/news/templates/news/homepage.html:318
 #: src/news/templates/news/services.html:85
 msgid "Үе үеийн ерөнхийлөгч нар"
 msgstr "Presidents"
 
-#: src/news/templates/news/homepage.html:523
+#: src/news/templates/news/homepage.html:350
 msgid "Асуулт хариулт"
 msgstr "FAQ"
 
-#: src/news/templates/news/index_2.html:62 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:61 src/news/templates/news/{% load
 #: static %}.html:82 %}.html:333
 msgid "Нүүр хуудас"
 msgstr "Home page"
 
-#: src/news/templates/news/index_2.html:66 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:65 src/news/templates/news/{% load
 #: static %}.html:86
 msgid "Компаны тухай"
 msgstr "About our company"
 
-#: src/news/templates/news/index_2.html:67 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:66 src/news/templates/news/{% load
 #: static %}.html:87
 msgid "Түүхэн замнал"
 msgstr "Timeline"
 
-#: src/news/templates/news/index_2.html:76 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:75 src/news/templates/news/{% load
 #: static %}.html:96
 msgid "Онцлох мэдээ"
 msgstr "Featured news"
 
-#: src/news/templates/news/index_2.html:78 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:77 src/news/templates/news/{% load
 #: static %}.html:98
 msgid "Урлаг, Спорт"
 msgstr "Art, sport"
 
-#: src/news/templates/news/index_2.html:85 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:84 src/news/templates/news/{% load
 #: static %}.html:105
 msgid "Сургалт хүсэх"
 msgstr "Course whislist"
 
-#: src/news/templates/news/index_2.html:86 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:85 src/news/templates/news/{% load
 #: static %}.html:106
 msgid "Санал асуулга"
 msgstr "Poll"
 
-#: src/news/templates/news/index_2.html:92 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:91 src/news/templates/news/{% load
 #: static %}.html:112
 msgid "Хэрэглэгч"
 msgstr "User"
 
-#: src/news/templates/news/index_2.html:96 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:95 src/news/templates/news/{% load
 #: static %}.html:116
 msgid "Нууц үг солих"
 msgstr "Change password"
 
-#: src/news/templates/news/index_2.html:99 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:98 src/news/templates/news/{% load
 #: static %}.html:119
 msgid "Нэр солих"
 msgstr "Change name"
 
-#: src/news/templates/news/index_2.html:102 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:101 src/news/templates/news/{% load
 #: static %}.html:122
 msgid "Имайл хаяг солих"
 msgstr "Change email address"
 
-#: src/news/templates/news/index_2.html:105 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:104 src/news/templates/news/{% load
 #: static %}.html:125
 msgid "Системээс гарах"
 msgstr "Log-out"
 
-#: src/news/templates/news/index_2.html:109 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:108 src/news/templates/news/{% load
 #: static %}.html:129 %}.html:233
 msgid "Нэвтрэх"
 msgstr "Log-in"
 
-#: src/news/templates/news/index_2.html:112 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:111 src/news/templates/news/{% load
 #: static %}.html:132
 msgid "Гишүүнээр бүртгүүлэх"
 msgstr "Register as a member"
 
-#: src/news/templates/news/index_2.html:117 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:116 src/news/templates/news/{% load
 #: static %}.html:110 %}.html:277 %}.html:337
 msgid "Холбоо барих"
 msgstr "Contact us"
@@ -332,6 +249,68 @@ msgstr "News"
 #: src/news/templates/news/{% load static %}.html:336
 msgid "Гишүүнчлэл"
 msgstr "Members"
+
+#, fuzzy
+#~| msgid "Category"
+#~ msgid "News category"
+#~ msgstr "Ангиллал"
+
+#~ msgid "Эрхэм зорилго"
+#~ msgstr "Mission"
+
+#~ msgid "Алсын хараа"
+#~ msgstr "Vision"
+
+#~ msgid "Mонголын эм зүйн хөгжлийг олон улсын түвшинд хүргэх"
+#~ msgstr ""
+#~ "Bring Mongolia's pharmaceutical development to the international level"
+
+#~ msgid "Үнэт зүйл"
+#~ msgstr "Values"
+
+#~ msgid "Манлайлал"
+#~ msgstr "Leadership"
+
+#~ msgid "Эв нэгдэл"
+#~ msgstr "Unity"
+
+#, fuzzy
+#~| msgid "Гишүүнчлэл"
+#~ msgid "Шинэчлэл"
+#~ msgstr "Members"
+
+#, fuzzy
+#~| msgid "Бидний тухай"
+#~ msgid "Бидний уриа"
+#~ msgstr "About us"
+
+#, fuzzy
+#~| msgid "Гишүүдийн тоо"
+#~ msgid "Гишүүдийн эрх ашиг"
+#~ msgstr "Member organizations"
+
+#~ msgid "Чадварлаг мэргэжилтэн"
+#~ msgstr "Skilled specialist"
+
+#~ msgid "Чанартай бүтээгдэхүүн"
+#~ msgstr "Quality products"
+
+#~ msgid "Чин сэтгэлийн хандлага"
+#~ msgstr "Sincere attitude"
+
+#~ msgid "Гишүүн байгууллагууд"
+#~ msgstr "Member organizations"
+
+#~ msgid "Гишүүдийн тоо"
+#~ msgstr "Member organizations"
+
+#~ msgid "Хийгдсэн үйл ажиллагаа"
+#~ msgstr "Activities performed"
+
+#, fuzzy
+#~| msgid "Сургалт хүсэх"
+#~ msgid "Уулзалт хурал"
+#~ msgstr "Course whislist"
 
 #~ msgid "Нийгэмд чиглэсэн аян"
 #~ msgstr "Social compaign"

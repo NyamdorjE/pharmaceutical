@@ -10,11 +10,6 @@ class ResearchCategory(models.Model):
     title = models.CharField(
         max_length=255, verbose_name=_('Research Category '))
 
-    class Meta:
-        verbose_name = _('Судалгааны ангиллал')
-        verbose_name_plural = _('Судалгааны ангиллал')
-        ordering = ['title']
-
     def __str__(self):
         return self.title
 
@@ -47,8 +42,8 @@ class LawCategory(models.Model):
     title = models.CharField(max_length=255, verbose_name=_('Хууль тогтоомж '))
 
     class Meta:
-        verbose_name = _('Хууль тогтоомж бүлэг')
-        verbose_name_plural = _('Хууль тогтоомж бүлэг')
+        verbose_name = _('Legislation category')
+        verbose_name_plural = _('Legislation category')
         ordering = ['title']
 
     def __str__(self):
@@ -57,19 +52,19 @@ class LawCategory(models.Model):
 
 class Law(models.Model):
     category = models.ForeignKey(LawCategory, verbose_name=_(
-        'Хууль бүлэг'), on_delete=models.CASCADE, related_name='Law', blank=True, default="1")
-    title = models.CharField(verbose_name=_('Гарчиг'), max_length=128)
+        'Legislation category'), on_delete=models.CASCADE, related_name='Law', blank=True, default="1")
+    title = models.CharField(verbose_name=_('Title'), max_length=128)
     pdf_file = models.FileField(verbose_name=_(
-        'Файл хийх'), upload_to='pdf_file', null=True, blank=True)
+        'Upload file'), upload_to='pdf_file', null=True, blank=True)
     views = models.IntegerField(default=0, editable=False)
     created_at = models.DateTimeField(verbose_name=_(
-        'Хэзээ үүсгэсэн'), auto_now_add=True, null=True, blank=True)
+        'Created on'), auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(
-        verbose_name=_('Хэзээ засварласан'), auto_now=True)
+        verbose_name=_('Updated on'), auto_now=True)
 
     class Meta:
-        verbose_name = _('Хууль тогтоомж')
-        verbose_name_plural = _('Хууль тогтоомж')
+        verbose_name = _('Legislation')
+        verbose_name_plural = _('Legislations')
         ordering = ['title']
 
     def __str__(self):

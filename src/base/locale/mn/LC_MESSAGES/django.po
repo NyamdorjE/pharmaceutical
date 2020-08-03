@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 09:28+0800\n"
+"POT-Creation-Date: 2020-08-03 14:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drug/settings/common.py:154
+#: drug/settings/common.py:156
 msgid "Mongolia"
 msgstr ""
 
-#: drug/settings/common.py:155
+#: drug/settings/common.py:157
 #: env/lib/python3.8/site-packages/tests/settings.py:44
 msgid "English"
 msgstr ""
@@ -1590,22 +1590,16 @@ msgid "Categories"
 msgstr "Ангилалууд"
 
 #: src/courses/models.py:10 src/courses/models.py:24 src/courses/models.py:46
+#: src/research/models.py:56 src/website/models.py:126
 msgid "Title"
 msgstr "Гарчиг"
 
-#: src/courses/models.py:13
-#, fuzzy
-#| msgid "Category"
-msgid "Course category"
-msgstr "Ангилал"
+#: src/courses/models.py:13 src/courses/models.py:14
+msgid "Курсын категори"
+msgstr ""
 
-#: src/courses/models.py:14
-#, fuzzy
-#| msgid "Categories"
-msgid "Course categories"
-msgstr "Ангилалууд"
-
-#: src/courses/models.py:26 src/courses/models.py:51
+#: src/courses/models.py:26 src/courses/models.py:51 src/website/models.py:95
+#: src/website/models.py:128
 msgid "Description"
 msgstr "Тайлбар"
 
@@ -1685,117 +1679,205 @@ msgstr "Хичээлийн гарчиг"
 msgid "Lessons"
 msgstr "Хичээлийн байрлах байрлал"
 
-#: src/research/apps.py:6 src/research/models.py:29
+#: src/poll/models.py:18
+msgid "Poll"
+msgstr "Санал асуулга"
+
+#: src/poll/models.py:19
+msgid "Polls"
+msgstr "Санал асуулга"
+
+#: src/research/apps.py:6
 msgid "Research"
 msgstr "Судалгаа"
 
-#: src/research/models.py:8
+#: src/research/models.py:11
 #, fuzzy
 #| msgid "Category"
 msgid "Research Category "
 msgstr "Ангилал"
 
-#: src/research/models.py:11
-#, fuzzy
-#| msgid "Category"
-msgid "Research category"
-msgstr "Ангилал"
-
-#: src/research/models.py:12
-#, fuzzy
-#| msgid "Category"
-msgid "Research categorys"
-msgstr "Ангилал"
-
-#: src/research/models.py:20 src/research/models.py:51
+#: src/research/models.py:20
 msgid "Гарчиг"
 msgstr ""
 
-#: src/research/models.py:21
+#: src/research/models.py:22
 msgid "Slug"
 msgstr "Нөмрөг"
 
-#: src/research/models.py:22
+#: src/research/models.py:23
 msgid "Үүсгэсэн"
 msgstr ""
 
-#: src/research/models.py:23
+#: src/research/models.py:24 src/website/models.py:42
 msgid "Контэнт"
 msgstr ""
 
-#: src/research/models.py:25 src/research/models.py:54
+#: src/research/models.py:28
 msgid "Хэзээ үүсгэсэн"
 msgstr ""
 
-#: src/research/models.py:26 src/research/models.py:55
+#: src/research/models.py:30
 msgid "Хэзээ засварласан"
 msgstr ""
 
-#: src/research/models.py:30
-#, fuzzy
-#| msgid "Research"
-msgid "Researchs"
-msgstr "Судалгаа"
+#: src/research/models.py:33 src/research/models.py:34
+msgid "Судалгаа"
+msgstr ""
 
-#: src/research/models.py:38
+#: src/research/models.py:42
 msgid "Хууль тогтоомж "
 msgstr ""
 
-#: src/research/models.py:41
+#: src/research/models.py:45 src/research/models.py:46
+#: src/research/models.py:55
 #, fuzzy
 #| msgid "Legislation Category"
 msgid "Legislation category"
 msgstr "Хууль тогтоомж ангилал"
 
-#: src/research/models.py:42
-#, fuzzy
-#| msgid "Legislation Category"
-msgid "legislation categorys"
-msgstr "Хууль тогтоомж ангилал"
-
-#: src/research/models.py:50
-msgid "Хууль бүлэг"
-msgstr ""
-
-#: src/research/models.py:52
-msgid "Файл хийх"
-msgstr ""
-
 #: src/research/models.py:58
 #, fuzzy
-#| msgid "Legislation"
-msgid "legislation"
+#| msgid "Pdf file"
+msgid "Upload file"
+msgstr "Файл хийх"
+
+#: src/research/models.py:61
+#, fuzzy
+#| msgid "Created at"
+msgid "Created on"
+msgstr "Үүсгэсэн огноо"
+
+#: src/research/models.py:63
+#, fuzzy
+#| msgid "Updated at"
+msgid "Updated on"
+msgstr "Зассан огноо"
+
+#: src/research/models.py:66
+#, fuzzy
+#| msgid "Legislation "
+msgid "Legislation"
 msgstr "Хууль тогтоомж"
 
-#: src/research/models.py:59
+#: src/research/models.py:67
 #, fuzzy
 #| msgid "Legislation"
-msgid "legislations"
+msgid "Legislations"
 msgstr "Хууль тогтоомж"
+
+#: src/website/models.py:14
+msgid "Icon"
+msgstr "Айкон"
+
+#: src/website/models.py:15
+msgid "Url"
+msgstr "Линк"
+
+#: src/website/models.py:16
+msgid "boxed"
+msgstr "Хүрээтэй"
+
+#: src/website/models.py:18
+#, fuzzy
+#| msgid "Lesson position"
+msgid "Menu position"
+msgstr "Хичээлийн байрлах байрлал"
+
+#: src/website/models.py:30
+msgid "Dropdown navigation child"
+msgstr "Доошоо буудаг навигаци "
+
+#: src/website/models.py:46
+msgid "Vision"
+msgstr "Хараа"
+
+#: src/website/models.py:55
+msgid "Mission content"
+msgstr "Эрхэм зорилго"
+
+#: src/website/models.py:58
+msgid "Mission"
+msgstr "Зорилго"
+
+#: src/website/models.py:70
+msgid "Testimonial"
+msgstr "Сэтгэгдэл"
+
+#: src/website/models.py:85
+msgid "Presidents"
+msgstr "Ерөнхийлөгч"
+
+#: src/website/models.py:93
+msgid "Numbers"
+msgstr "Тоо"
+
+#: src/website/models.py:99
+msgid "Count number"
+msgstr "Тоолуур"
+
+#: src/website/models.py:104
+#, fuzzy
+#| msgid "Description"
+msgid "Question"
+msgstr "Тайлбар"
+
+#: src/website/models.py:105
+msgid "Answer"
+msgstr "Хариулт"
+
+#: src/website/models.py:109
+msgid "Faq"
+msgstr "Асуулт хариулт"
+
+#: src/website/models.py:121
+msgid "partner"
+msgstr "Хамтрагч байгууллаг"
+
+#: src/website/models.py:132
+msgid "aboutpagemission"
+msgstr "Бидний тухай хуудас даалгавар"
+
+#, fuzzy
+#~| msgid "Category"
+#~ msgid "Course category"
+#~ msgstr "Ангилал"
+
+#, fuzzy
+#~| msgid "Categories"
+#~ msgid "Course categories"
+#~ msgstr "Ангилалууд"
+
+#, fuzzy
+#~| msgid "Category"
+#~ msgid "Research category"
+#~ msgstr "Ангилал"
+
+#, fuzzy
+#~| msgid "Category"
+#~ msgid "Research categorys"
+#~ msgstr "Ангилал"
+
+#, fuzzy
+#~| msgid "Research"
+#~ msgid "Researchs"
+#~ msgstr "Судалгаа"
+
+#, fuzzy
+#~| msgid "Legislation Category"
+#~ msgid "legislation categorys"
+#~ msgstr "Хууль тогтоомж ангилал"
+
+#, fuzzy
+#~| msgid "Legislation"
+#~ msgid "legislation"
+#~ msgstr "Хууль тогтоомж"
 
 #~ msgid "Created by"
 #~ msgstr "Үүсгэсэн"
 
 #~ msgid "Contet"
 #~ msgstr "Контент"
-
-#, fuzzy
-#~| msgid "Created at"
-#~ msgid "Created on"
-#~ msgstr "Үүсгэсэн огноо"
-
-#, fuzzy
-#~| msgid "Updated at"
-#~ msgid "Updated on"
-#~ msgstr "Зассан огноо"
-
-#~ msgid "Legislation "
-#~ msgstr "Хууль тогтоомж"
-
-#, fuzzy
-#~| msgid "Pdf file"
-#~ msgid "Upload file"
-#~ msgstr "Файл хийх"
 
 #~ msgid "Updated at"
 #~ msgstr "Зассан огноо"
