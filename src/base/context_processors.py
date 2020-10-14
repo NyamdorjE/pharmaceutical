@@ -1,7 +1,7 @@
-from blog.forms import ContactForm
+from django.http import request
+from src.website.models import Carousel
 
-def contact_form(request):
-    if request.method == 'GET':
-        contact_form = ContactForm()
-        return {'contact_form': contact_form}
-    return
+
+def extras(request):
+    carousel = Carousel.objects.all()
+    return {"carousel": carousel}

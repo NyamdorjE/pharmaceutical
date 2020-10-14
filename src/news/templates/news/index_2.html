@@ -16,7 +16,9 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
   <!-- Favicons -->
   <link href="{% static 'base/assets/img/favicon.png" rel="icon' %}">
   <link href="{% static 'base/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
@@ -45,7 +47,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+    <div class="container d-flex align-items-center" style="max-width:1220px;">
 
       <div class="logo mr-auto">
         <a href="{% url 'website-homepage' %}"><img src="{% static 'base/assets/images/logo.png' %}" alt="" /></a></h1>
@@ -55,108 +57,173 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-         
-                  
-          	{% with request.resolver_match.url_name as url_name %}
-                        <li  ><a style="padding-right: 15px;" href="{% url 'website-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
 
-                        <li class="drop-down"><a href="#">{% trans 'Бидний тухай' %}</a>
-                          <ul class="dl-submenu">
-                            <li><a href="{% url 'website-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
-                            <li><a href="{% url 'website-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
-                            <li>
-                              <a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a>  
-                            </li>
-                          </ul>
-                        </li>
-                        
-                        <li class="drop-down" ><a href="#">{% trans 'Мэдээ мэдээлэл' %}</a>
-                          <ul class="dl-submenu">
-                            <li><a href="{% url 'news-special-news' %}">{% trans 'Онцлох мэдээ' %}</a></li>
-                            <li><a href="{% url 'news-news-list' %}">{% trans 'Мэдээ мэдээлэл' %}</a></li>
-                            <li><a href="{% url 'news-sport-list' %}">{% trans 'Урлаг, Спорт' %}</a></li>
-                            <li><a href="{% url 'research-research-list' %}"> {% trans 'Судалгаа' %}</a></li>
-                          </ul>
-                        </li>
 
-                        <li class="drop-down"><a href="{% url 'courses:home'%}">{% trans 'Сургалт' %}</a>
-                        <ul class="dl-submenu">
-                            <li><a href="{% url 'contact' %}">{% trans 'Сургалт хүсэх' %}</a></li>
-                            <li><a href="{% url 'poll:poll'%}">{% trans 'Санал асуулга' %} </a></li>
-                       </ul>
-                        </li>
+          {% with request.resolver_match.url_name as url_name %}
+          <li><a style="padding-right: 15px;" href="{% url 'website-homepage' %}">{% trans 'Нүүр хуудас' %}</a></li>
 
-                      
-                       
-                        <li class="drop-down"><a href="#">{% trans 'Хэрэглэгч' %}</a>
-                          <ul class="dl-submenu">
-                            {% if request.user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'accounts:change_password' %}">{% trans 'Нууц үг солих' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'accounts:change_profile' %}">{% trans 'Нэр солих' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'accounts:change_email' %}">{% trans 'Имайл хаяг солих' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'accounts:log_out' %}">{% trans 'Системээс гарах' %}</a>
-                            </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Нэвтрэх' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Гишүүнээр бүртгүүлэх' %}</a>
-                            </li>
-                        {% endif %}
-                          </ul>
-                        </li>
-                        <li class="get-started"><a href="{% url 'request' %}">{% trans 'Холбоо барих' %}</a></li>
-                    <li class="menu-language">
-                  <form action="/i18n/setlang/" method="post" id="langform" class="langform">
-                                         {% csrf_token %}
-                   {% if request.LANGUAGE_CODE == 'mn' %}
-                       <input type="hidden" name="language" value="en"/>
-                          <a class="lan" href="#" onclick="">{{request.LANGUAGE_CODE}}
-                      <img onclick="document.getElementById('langform').submit();" src="{% static 'base/assets/images/mn.png' %}">
-                             </a>
-                             {% else %}
-                              <input type="hidden" name="language" value="mn"/>
-                                     <a class="lan" href="#" >{{request.LANGUAGE_CODE}}
-                           <img onclick="document.getElementById('langform').submit();" src="{% static 'base/assets/images/en.png' %}">
-                           </a>
-                              {% endif %}
-                                       </form>
-                            </li>
+          <li class="drop-down"><a href="#">{% trans 'Бидний тухай' %}</a>
+            <ul class="dl-submenu">
+              <li><a href="{% url 'website-about-page' %}">{% trans 'Компаны тухай' %}</a></li>
+              {% comment %} <li><a href="{% url 'website-time-line' %}">{% trans 'Түүхэн замнал' %}</a></li>
+              {% endcomment %}
+              <li><a href="{% url 'website-service' %}">{% trans 'Үйл ажиллагаа' %}</a></li>
+              <li><a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a>
+              </li>
+            </ul>
+          </li>
 
-                 {% endwith %} 
+          <li class="drop-down"><a href="#">{% trans 'Мэдээ мэдээлэл' %}</a>
+            <ul class="dl-submenu">
+              <li><a href="{% url 'news-special-news' %}">{% trans 'Онцлох мэдээ' %}</a></li>
+              <li><a href="{% url 'news-news-list' %}">{% trans 'Мэдээ мэдээлэл' %}</a></li>
+              <li><a href="{% url 'news-sport-list' %}">{% trans 'Урлаг, Спорт' %}</a></li>
+              <li><a href="{% url 'research-research-list' %}"> {% trans 'Судалгаа' %}</a></li>
+            </ul>
+          </li>
+
+          <li class="drop-down"><a href="">{% trans 'Сургалт' %}</a>
+            <ul class="dl-submenu">
+              <li><a href="{% url 'courses:home'%}">{% trans 'Сургалт үзэх' %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans 'Сургалт хүсэх' %}</a></li>
+              <li><a href="{% url 'poll:poll'%}">{% trans 'Санал асуулга' %} </a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="drop-down"><a href="#">{% trans 'Хэрэглэгч' %}</a>
+            <ul class="dl-submenu">
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:change_password' %}">{% trans 'Нууц үг солих' %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:change_profile' %}">{% trans 'Нэр солих' %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:change_email' %}">{% trans 'Имайл хаяг солих' %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:log_out' %}">{% trans 'Системээс гарах' %}</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Нэвтрэх' %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Гишүүнээр бүртгүүлэх' %}</a>
+              </li>
+              {% endif %}
+            </ul>
+          </li>
+          <li class=""><a href="{% url 'request' %}">{% trans 'Хүний нөөц' %}</a></li>
+          <li class="get-started"><a href="{% url 'request' %}">{% trans 'Холбоо барих' %}</a></li>
+          <li class="menu-language">
+            <form action="/i18n/setlang/" method="post" id="langform" class="langform">
+              {% csrf_token %}
+              {% if request.LANGUAGE_CODE == 'mn' %}
+              <input type="hidden" name="language" value="en" />
+              <a class="lan" href="#" onclick="">{{request.LANGUAGE_CODE}}
+                <img onclick="document.getElementById('langform').submit();"
+                  src="{% static 'base/assets/images/mn.png' %}">
+              </a>
+              {% else %}
+              <input type="hidden" name="language" value="mn" />
+              <a class="lan" href="#">{{request.LANGUAGE_CODE}}
+                <img onclick="document.getElementById('langform').submit();"
+                  src="{% static 'base/assets/images/en.png' %}">
+              </a>
+              {% endif %}
+            </form>
+          </li>
+
+          {% endwith %}
         </ul>
       </nav><!-- .nav-menu -->
 
     </div>
   </header><!-- End Header -->
+
   <body>
-   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Тавтай морилно уу  <span>ЭМ ХОЛБОО ТББ</spa>
-      </h1>
-      
-    </div>
-  </section>
-  
-  <!-- End Hero -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="hero-container">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+          <div class="carousel-inner" role="listbox">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active"
+              style="background-image: url('{% static 'base/assets/images/banner1.jpg' %}');">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  {% comment %} <h2 class="animate__animated animate__fadeInDown">Тавтай морилно уу.</h2>
+                  <p class="animate__animated animate__fadeInUp">Тэкст байрлана.</p>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Цааш үзэх</a>
+                  {% endcomment %}
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url('{% static 'base/assets/images/banner2.jpg' %}');">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  {% comment %} <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi
+                    ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea
+                    voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.
+                  </p>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Цааш үзэх</a>
+                  {% endcomment %}
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            {% comment %} <div class="carousel-item" style="background-image: url('{% static 'base/assets/images/3.jpg' %}');">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                 <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi
+                    ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea
+                    voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.
+                  </p>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Цааш үзэх</a>
+                 
+                </div>
+              </div>
+            </div>
+
+          </div> {% endcomment %}
+
+          <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+        </div>
+      </div>
+    </section><!-- End Hero -->
+
+
   </body>
-{% block content %}
+
+  {% block content %}
 
 
-{% endblock %}
+  {% endblock %}
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    
+
 
     <div class="footer-top">
       <div class="container">
@@ -166,7 +233,7 @@
             <h3>Холбоо барих<span>.</span></h3>
             <p>
               Сонгинохайрхан дүүрэг, 29-р хороо <br>
-             Үйлдвэрчний эвлэлийн гудамж,<br>
+              Үйлдвэрчний эвлэлийн гудамж,<br>
               Улаанбаатар, Монгол Улс <br><br>
               <strong>Утас:</strong> +(976) 9909-8752<br>
               <strong>E-mail:</strong> mezbneh@gmail.com<br>
@@ -215,7 +282,7 @@
         &copy; Copyright <strong><span>Эм холбоо</span></strong>. Зохиогчын эрхээр хамгаалагдав.
       </div>
       <div class="credits">
-       
+
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -223,8 +290,10 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script type="text/javascript" src="{% static 'base/assets/rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'base/assets/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'base/assets/rs-plugin/js/jquery.themepunch.plugins.min.js' %}">
+  </script>
+  <script type="text/javascript" src="{% static 'base/assets/rs-plugin/js/jquery.themepunch.revolution.min.js' %}">
+  </script>
   <script src="{% static 'base/assets/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'base/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'base/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
@@ -236,9 +305,167 @@
   <script src="{% static 'base/assets/vendor/venobox/venobox.min.js' %}"></script>
   <script src="{% static 'base/assets/vendor/aos/aos.js' %}"></script>
 
+
   <!-- Template Main JS File -->
   <script src="{% static 'base/assets/js/main.js' %}"></script>
 
 </body>
 
 </html>
+
+<style>
+  #hero {
+    width: 100%;
+    height: calc(100vh - 114px);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #hero .carousel-item {
+    width: 100%;
+    height: calc(100vh - 114px);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  #hero .carousel-item::before {
+    content: '';
+    background: rgb(5, 5, 5);
+    background: linear-gradient(90deg, rgba(5, 5, 5, 0.9248074229691877) 1%, rgba(13, 13, 13, 0.04805672268907568) 68%, rgba(12, 41, 15, 1) 99%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  #hero .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  #hero .carousel-content {
+    text-align: left;
+  }
+
+  @media (max-width: 992px) {
+
+    #hero,
+    #hero .carousel-item {
+      height: calc(100vh - 70px);
+    }
+
+    #hero .carousel-content.container {
+      padding: 0 50px;
+    }
+  }
+
+  #hero h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 900;
+  }
+
+  #hero p {
+    width: 80%;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    color: #fff;
+  }
+
+  #hero .carousel-inner .carousel-item {
+    transition-property: opacity;
+    background-position: center top;
+  }
+
+  #hero .carousel-inner .carousel-item,
+  #hero .carousel-inner .active.carousel-item-left,
+  #hero .carousel-inner .active.carousel-item-right {
+    opacity: 0;
+  }
+
+  #hero .carousel-inner .active,
+  #hero .carousel-inner .carousel-item-next.carousel-item-left,
+  #hero .carousel-inner .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  #hero .carousel-inner .carousel-item-next,
+  #hero .carousel-inner .carousel-item-prev,
+  #hero .carousel-inner .active.carousel-item-left,
+  #hero .carousel-inner .active.carousel-item-right {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  #hero .carousel-control-prev,
+  #hero .carousel-control-next {
+    width: 10%;
+  }
+
+  #hero .carousel-control-next-icon,
+  #hero .carousel-control-prev-icon {
+    background: none;
+    font-size: 48px;
+    line-height: 1;
+    width: auto;
+    height: auto;
+  }
+
+  #hero .carousel-indicators li {
+    cursor: pointer;
+  }
+
+  #hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 5px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 0;
+    background: #428bca;
+  }
+
+  #hero .btn-get-started:hover {
+    background: #1c5c93;
+  }
+
+  @media (max-width: 768px) {
+    #hero h2 {
+      font-size: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #hero p {
+      width: 40%;
+    }
+
+    #hero .carousel-control-prev,
+    #hero .carousel-control-next {
+      width: 5%;
+    }
+  }
+</style>

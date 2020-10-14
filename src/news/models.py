@@ -5,23 +5,22 @@ from django.utils.translation import ugettext_lazy as _
 import re
 from django.db.models import Q
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils import timezone
+from hitcount.models import HitCountMixin, HitCount
+from django.contrib.contenttypes.fields import GenericRelation
 
 
 # Create your models here.
 class Category(models.Model):
-    title = models.CharField(max_length=255, verbose_name=_('Title'))
-    category_type = (
-        ("news", "News"),
-        ("sport", "Sport"),
-        ("research", "Research")
-    )
-    cate_type = models.CharField(
-        max_length=255, choices=category_type, default="news")
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
+    category_type = (("news", "News"), ("sport", "Sport"), ("research", "Research"))
+    cate_type = models.CharField(max_length=255, choices=category_type, default="news")
 
     class Meta:
         verbose_name = _("Мэдээ ангиллал")
         verbose_name_plural = _("Мэдээ ангиллал")
-        ordering = ['title']
+        ordering = ["title"]
 
     def __str__(self):
         return self.title
@@ -31,26 +30,33 @@ class Category(models.Model):
 
 
 class News(models.Model):
-    category = models.ForeignKey(Category, verbose_name=_(
-        'Category'), on_delete=models.CASCADE, related_name="News")
-    title = models.CharField(
-        max_length=255, verbose_name=_('Title'), unique=True)
-    slug = models.SlugField(
-        max_length=255, verbose_name=_('News Slug'), unique=True)
-    author = models.CharField(max_length=255, verbose_name=_('Created by'))
-    content = RichTextField(blank=True, null=True, verbose_name=_('Content'))
-    image = models.ImageField(verbose_name=(
-        'Picture'), upload_to='media/news/')
+    category = models.ForeignKey(
+        Category,
+        verbose_name=_("Category"),
+        on_delete=models.CASCADE,
+        related_name="News",
+    )
+    title = models.CharField(max_length=255, verbose_name=_("Title"), unique=True)
+    slug = models.SlugField(max_length=255, verbose_name=_("News Slug"), unique=True)
+    author = models.CharField(max_length=255, verbose_name=_("Created by"))
+    content = RichTextUploadingField(blank=True, null=True, verbose_name=_("Content"))
+    image = models.ImageField(verbose_name=("Picture"), upload_to="media/news/")
     created_on = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('Created on'))
-    updated_on = models.DateTimeField(
-        auto_now=True,  verbose_name=_('Updated on'))
+        auto_now_add=False, default=timezone.now, verbose_name=_("Created on")
+    )
+    updated_on = models.DateTimeField(auto_now=True, verbose_name=_("Updated on"))
     is_special = models.BooleanField(default=False)
+    hit_count_generic = GenericRelation(
+        HitCount,
+        object_id_field="object_p",
+        related_query_name="hit_count_generic_relation",
+    )
 
     class Meta:
         verbose_name = _("Article")
         verbose_name_plural = _("Articles")
-        ordering = ['-created_on']
+
+        ordering = ["-created_on"]
 
     def __str__(self):
         return self.title

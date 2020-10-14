@@ -66,7 +66,7 @@ class TimeLine(generic.ListView):
 
 
 class AboutPage(TemplateView):
-    template_name = "news/services.html"
+    template_name = "news/aboutus.html"
     queryset = News.objects.all().order_by('created_on')
     paginate_by = 6
 
@@ -82,3 +82,7 @@ class AboutPage(TemplateView):
 
 class Greetings(TemplateView):
     template_name = "news/greetings.html"
+
+
+class Service(TemplateView):
+    template_name = "news/service.html"

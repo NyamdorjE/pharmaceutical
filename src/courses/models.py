@@ -102,3 +102,12 @@ class Post(models.Model):
     post = models.CharField(max_length=500)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+
+attandace_choices = (
+    ('absent', 'Absent'),
+)
+class Attandance(models.Model):
+    student = models.ForeignKey(User, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    attandance = models.CharField(max_length=10, choices=attandace_choices, blank=True)

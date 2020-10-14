@@ -6,31 +6,49 @@
 
 {% block content %}
 
-         <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Хууль тогтоомж</h2>
-          <ol>
-            <li><a href="{% url 'website-homepage'%}">Нүүр хуудас</a></li>
-            <li>Хууль тогтоомж</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs Section -->
-
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
-  <div class="overlay"></div>
+<!-- ======= Breadcrumbs Section ======= -->
+<section class="breadcrumbs">
   <div class="container">
-    <div class="row no-gutters slider-text align-items-center justify-content-center">
-      <div class="col-md-9 ftco-animate text-center">
-       
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Хууль тогтоомж</h2>
+      <ol>
+        <li><a href="{% url 'website-homepage'%}">Нүүр хуудас</a></li>
+        <li>Хууль тогтоомж</li>
+      </ol>
+    </div>
+
+  </div>
+</section><!-- End Breadcrumbs Section -->
+
+
+<!-- ======= Featured Section ======= -->
+<section id="featured" class="featured">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="icon-box" href="{% url 'research-law-detail' %}">
+          <i class="icofont-law-alt-1" href="{% url 'research-law-detail' %}"></i>
+          <h3><a href="{% url 'research-law-detail' %}">Хууль тогтоомж</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="icon-box">
+          <i class="icofont-lawyer-alt-1"></i>
+          <h3><a href="{% url 'research-law-detail2' %}">Журам, Тушаал</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="icon-box">
+          <i class="icofont-tasks-alt"></i>
+          <h3><a href="{% url 'research-law-detail3' %}">Эм холбооны дүрэм журам</a></h3>
+        </div>
       </div>
     </div>
+
   </div>
-</section>
+</section><!-- End Featured Section -->
 
 <div class='container-wide banner'>
   <div class='container' style='text-align:center'>
@@ -39,172 +57,190 @@
 </div>
 
 
-<div class='container'>
-  <div class='card'>
-    <table class='table table-hover'>
-      <thead>
-        <tr>
-          <td class='left row-header'>Хууль тогтоомж</td>
-          <td class=""> Баталсан өдөр</td>
-          <td class=""> Үзэх</td>
 
-          
-        </tr>
-      </thead>
-      <tbody>
-      {% for law in law %}
-        {{ law.description }}
-        <tr>
-            <td class='left'> {{ law.title }}</td>
-            <td>{{ law.created_at|naturalday:'Y-m-d' }}</td>
-            <td>
-                <li>
-                  <a href="{{ law.pdf_file.url }}">
-                  <span class="pdf-icon"> </span>
-                  </a>                   
-                    
-                </li>
-            </td>
-         
-        </tr>
-        {% endfor %}
-
-    
-       
-      </tbody>
-    </table>
-
-  </div>
-</div>
 
 
 <style>
-
-h1{
-  text-align: center;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
-$true-white: #fff;
-$white: #F5F5F5;
-$spacer: 1.5rem;
-$material-shadow: 0 2px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.12);
-$header: #616161;
-$sub-header: #757575;
-$grey-text: #9E9E9E;
-$grey: #BDBDBD;
-$main-color: #388E3C;
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-
-.banner{
-  background: $main-color;
-  padding: 5rem $spacer 3rem;
-  margin-bottom: $spacer;
-  h1{
-    color: $white;
-  }
-}
-
-
-
-.card{
-  background: $true-white;
-  //padding: $spacer 0;
-  border-radius: .25rem;
-  box-shadow: $material-shadow;
-  margin-bottom: 100px;
-  margin-top: 10px;
-}
-
-.table{
-  width: 100%;
-  border-collapse: collapse; 
-  margin-bottom: $spacer;
-  .row-header{
-    color: $grey-text;
+  h1 {
+    text-align: center;
   }
 
-  tr{
-    border-bottom: 1px solid $grey;
-    &:last-child{
-      border: 0;
+  @import url(https://fonts.googleapis.com/css?family=Oxygen);
+  $true-white: #fff;
+  $white: #F5F5F5;
+  $spacer: 1.5rem;
+  $material-shadow: 0 2px 3px rgba(0, 0, 0, .05),
+  0 1px 2px rgba(0, 0, 0, .12);
+  $header: #616161;
+  $sub-header: #757575;
+  $grey-text: #9E9E9E;
+  $grey: #BDBDBD;
+  $main-color: #388E3C;
+
+  *,
+  *:after,
+  *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+
+  .banner {
+    background: $main-color;
+    padding: 5rem $spacer 3rem;
+    margin-bottom: $spacer;
+
+    h1 {
+      color: $white;
     }
   }
-  
-  td{
-    text-align: right;
-    padding: 1.4rem 1rem;
 
-  }
-  
-  .left{
-  text-align: left;
-  }
-}
 
-.table-hover {
-  > tbody > tr:hover {
-    > td,
-    > th {
-      background-color: rgba($main-color, 0.125);
+
+  .card {
+    background: $true-white;
+    //padding: $spacer 0;
+    border-radius: .25rem;
+    box-shadow: $material-shadow;
+    margin-bottom: 100px;
+    margin-top: 10px;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $spacer;
+
+    .row-header {
+      color: $grey-text;
+    }
+
+    tr {
+      border-bottom: 1px solid $grey;
+
+      &:last-child {
+        border: 0;
+      }
+    }
+
+    td {
+      text-align: right;
+      padding: 1.4rem 1rem;
+
+    }
+
+    .left {
+      text-align: left;
     }
   }
-}
 
-.table-hover {
-  > tbody > tr:hover {
-       box-shadow: $material-shadow;
+  .table-hover {
+    >tbody>tr:hover {
+
+      >td,
+      >th {
+        background-color: rgba($main-color, 0.125);
+      }
+    }
   }
-}
+
+  .table-hover {
+    >tbody>tr:hover {
+      box-shadow: $material-shadow;
+    }
+  }
 
 
 
 
 
-.pdf-icon {
-  font-size: 30%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 6em;
-  height: 8.5em;
-  background-color: #eee;
-  background-image: url("https://i.imgur.com/lZ5SgDE.png");
-  background-repeat: no-repeat;
-  -webkit-background-size: 85% auto;
-  -moz-background-size: 85% auto;
-  background-size: 85% auto;
-  background-position: center 2em;
-  border-radius: 1px 2em 1px 1px;
-  border: 1px solid #ddd;
-}
-.pdf-icon:after {
-  content: 'PDF';
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
-  padding: 0.2em 0 0.1em;
-  color: #fff;
-  display: block;
-  position: absolute;
-  top: 0.7em;
-  left: -1.5em;
-  width: 3.4em;
-  height: auto;
-  background: #da2525;
-  border-radius: 2px;
-}
+  .pdf-icon {
+    font-size: 30%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 6em;
+    height: 8.5em;
+    background-color: #eee;
+    background-image: url("https://i.imgur.com/lZ5SgDE.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 85% auto;
+    -moz-background-size: 85% auto;
+    background-size: 85% auto;
+    background-position: center 2em;
+    border-radius: 1px 2em 1px 1px;
+    border: 1px solid #ddd;
+  }
 
+  .pdf-icon:after {
+    content: 'PDF';
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0.2em 0 0.1em;
+    color: #fff;
+    display: block;
+    position: absolute;
+    top: 0.7em;
+    left: -1.5em;
+    width: 3.4em;
+    height: auto;
+    background: #da2525;
+    border-radius: 2px;
+  }
+
+  .featured {
+    position: relative;
+    z-index: 2;
+  }
+
+  .featured .icon-box {
+    padding: 40px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background: #fff;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .featured .icon-box i {
+    color: #e96b56;
+    font-size: 42px;
+    margin-bottom: 15px;
+    display: block;
+    padding-left: 120px;
+  }
+
+  .featured .icon-box h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .featured .icon-box h3 a {
+    color: #545454;
+    transition: 0.3s;
+  }
+
+  .featured .icon-box p {
+    color: #545454;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .featured .icon-box:hover {
+    background: #e96b56;
+  }
+
+  .featured .icon-box:hover i,
+  .featured .icon-box:hover h3 a,
+  .featured .icon-box:hover p {
+    color: #fff;
+  }
 </style>
 
 

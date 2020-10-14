@@ -10,6 +10,10 @@ urlpatterns = [
     Nurl('research/') > 'src.research.views.ResearchList',
     Nurl('research/<slug:slug>/') > 'src.research.views.ResearchDetail',
     Nurl('law/') > 'src.research.views.LawList',
+    Nurl('lawdetail/') > 'src.research.views.LawDetail',
+    Nurl('lawdetail2/') > 'src.research.views.LawDetail2',
+    Nurl('lawdetail3/') > 'src.research.views.LawDetail3',
+
     # Nurl('law/<slug:slug>/') > 'src.research.views.LawDetail',
 
 ]

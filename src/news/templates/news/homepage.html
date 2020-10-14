@@ -184,8 +184,8 @@
                   <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ news.created_on|naturalday:'Y-m-d' }}</time></a></li>
                 </ul>
               </div>
-              <div class="entry-content">
-                <div class="read-more" style="padding-bottom: 10px;">
+              <div class="entry-content" style="padding-top: 10px;">
+                <div class="read-more">
                     <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}" >
                         {% trans 'Цааш үзэх' %}
                     </a>

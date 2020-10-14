@@ -1,0 +1,972 @@
+{% extends 'news/index_2.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<!-- TAB CONTROLLERS -->
+<input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
+<input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-4-ctrl" class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-5-ctrl" class="panel-radios" type="radio" name="tab-radios">
+<input id="nav-ctrl" class="panel-radios" type="checkbox" name="nav-checkbox">
+
+
+<!-- TABS LIST -->
+<ul id="tabs-list">
+  <!-- MENU TOGGLE -->
+  <label id="open-nav-label" for="nav-ctrl"></label>
+  <li id="li-for-panel-1">
+    <label class="panel-label" for="panel-1-ctrl">Түүхэн замнал</label>
+  </li>
+  <li id="li-for-panel-2">
+    <label class="panel-label" for="panel-2-ctrl">Бүтэц</label>
+  </li>
+  <li id="li-for-panel-3">
+    <label class="panel-label" for="panel-3-ctrl">Үйл ажиллагаа</label>
+  </li>
+  <li id="li-for-panel-4">
+    <label class="panel-label" for="panel-4-ctrl">Хамтын үйл ажиллагаа</label>
+  </li>
+  <li id="li-for-panel-5" class="last">
+    <label class="panel-label" for="panel-5-ctrl">Хууль эрх зүйн чиглэлээр санал </label>
+  </li>
+  <label id="close-nav-label" for="nav-ctrl">Close</label>
+</ul>
+
+<!-- THE PANELS -->
+<article id="panels">
+  <div class="container">
+    <section id="panel-1">
+      <main>
+        <section id="conference-timeline">
+          <div class="timeline-start" style="margin-top: 100px">Эхлэх</div>
+          <div class="conference-center-line"></div>
+          <div class="conference-timeline-content">
+            <!-- Article -->
+            <div class="timeline-article">
+              <div class="content-left-container">
+                <div class="content-left">
+                  <h4>“Эм үйлдвэрлэгчийн холбоо” <span class="article-number"></span></h4>
+                  <p> Анхны ерөнхийлөгчөөр Монос Фарм ХХК-ийн захирал, эм зүйн ухааны доктор Л.Хүрэлбаатарыг, Гүйцэтгэх
+                    захирлаар З.Дашзэвэгийг сонгов. </p>
+                </div>
+                <span class="timeline-author"></span>
+              </div>
+
+              <div class="meta-date">
+                <span class="date" style="margin-top: 28px;"></span>
+                <span class="month">1996</span>
+              </div>
+            </div>
+            <!-- // Article -->
+            <!-- Article -->
+            <div class="timeline-article">
+
+              <div class="content-right-container">
+                <div class="content-right">
+                  <h4>“Төрийн бус байгууллага” </h4>
+                  <p>“Төрийн бус байгууллагын тухайн хууль”-д нийцүүлэн дүрэмдээ зарим өөрчлөлт оруулж, холбооны
+                    статусыг ашгийн бус, “Төрийн бус байгууллага” болгов. <span class="article-number"></span></p>
+                </div>
+                <span class="timeline-author"></span>
+              </div>
+              <div class="meta-date">
+                <span class="date" style="margin-top: 28px;"></span>
+                <span class="month">1997</span>
+              </div>
+            </div>
+            <!-- // Article -->
+            <!-- Article -->
+            <div class="timeline-article">
+              <div class="content-left-container">
+                <div class="content-left">
+                  <h4>“Эм холбоо” </h4>
+                  <p>“Эм үйлдвэрлэгчдийн холбоо”-ны 3 дугаар чуулган хуралдав. Эм үйлдвэрлэгчдийн холбоонд “Монголын
+                    уламжлалт эмийн холбоо”, “Монголын эм импортлогчдын холбоо” нэгдсэн <span
+                      class="article-number"></span></p>
+                </div>
+                <span class="timeline-author"></span>
+              </div>
+
+              <div class="meta-date">
+                <span class="date" style="margin-top: 28px;"></span>
+                <span class="month">2003</span>
+              </div>
+            </div>
+            <!-- // Article -->
+            <div class="timeline-article">
+
+              <div class="content-right-container">
+                <div class="content-right">
+                  <h4> “МЭЗБН ЭМ ХОЛБОО” </h4>
+                  <p>Монгол Улсын Хууль зүй, Дотоод хэргийн сайдын 96 дугаар тушаалаар Монголын Эм Зүйн Байгууллагуудын
+                    Нэгдсэн “Эм” холбоо ТББ нь гишүүддээ үйлчлэх ТББ статустайгаар улсын бүртгэлд шинэчлэн бүртгэгдсэн.
+                    <span class="article-number"></span></p>
+                </div>
+                <span class="timeline-author"></span>
+              </div>
+              <div class="meta-date">
+                <span class="date" style="margin-top: 28px;"></span>
+                <span class="month">2006</span>
+              </div>
+            </div>
+            <!--2-->
+            <div class="timeline-article">
+              <div class="content-left-container">
+                <div class="content-left">
+                  <h4> “МЭЗБН ЭМ ХОЛБОО” </h4>
+                  <p>ЭМ холбооны 11 дүгээр чуулган зохион байгуулагдаж холбооны Удирдах зөвлөлийн гишүүдийн 60 хувь нь
+                    шинэчлэгдсэн байна. <span class="article-number"></span></p>
+                </div>
+                <span class="timeline-author"></span>
+              </div>
+              <div class="meta-date">
+                <span class="date" style="margin-top: 28px;"></span>
+                <span class="month">2019</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-end" style="margin-bottom: 100px;"> Үргэлжлэл</div>
+        </section>
+      </main>
+    </section>
+    <section id="panel-2">
+      <main>
+        <img src="{% static 'base/assets/img/service/bvtets.png'%}" class="img-fluid" alt="">
+      </main>
+    </section>
+    <section id="panel-3">
+      <main>
+        <img src="{% static 'base/assets/img/service/suragaltva.png'%}" class="img-fluid" alt="">
+        <img src="{% static 'base/assets/img/service/ulamjlaltva.png'%}" class="img-fluid" alt="" style="right:15px;">
+      </main>
+    </section>
+    <section id="panel-4">
+      <main>
+        <img src="{% static 'base/assets/img/service/hamtiin1.png'%}" class="img-fluid" alt="">
+
+        <img src="{% static 'base/assets/img/service/hamtiin2.png'%}" class="img-fluid" alt="">
+      </main>
+    </section>
+    <section id="panel-5">
+      <main>
+        <img src="{% static 'base/assets/img/service/huuli.png'%}" class="img-fluid" alt="">
+      </main>
+    </section>
+  </div>
+</article>
+<style>
+  section {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400|Inconsolata);
+
+  ul#tabs-list {
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid #dfdfdf;
+    margin: 0;
+    padding: 0;
+  }
+
+  label.panel-label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    width: 100%;
+    color: #bdc3c7;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    -webkit-transition-property: background-color, color;
+    transition-property: background-color, color;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+  }
+
+  label.panel-label:hover {
+    color: #49b5e7;
+  }
+
+  #panels {
+    background-color: white;
+  }
+
+  #panels .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  #panels section header label.panel-label {
+    padding: 12px 24px;
+    box-sizing: border-box;
+  }
+
+  #panels section main {
+    box-sizing: border-box;
+    max-height: 0;
+    opacity: 0;
+    -webkit-transition: opacity 600ms;
+    transition: opacity 600ms;
+    overflow-y: hidden;
+  }
+
+  #panel-1-ctrl:checked~#panels #panel-1 main {
+    max-height: initial;
+    opacity: 1;
+    padding: 48px 24px;
+  }
+
+  #panel-2-ctrl:checked~#panels #panel-2 main {
+    max-height: initial;
+    opacity: 1;
+    padding: 48px 24px;
+  }
+
+  #panel-3-ctrl:checked~#panels #panel-3 main {
+    max-height: initial;
+    opacity: 1;
+    padding: 48px 24px;
+  }
+
+  #panel-4-ctrl:checked~#panels #panel-4 main {
+    max-height: initial;
+    opacity: 1;
+    padding: 48px 24px;
+  }
+
+  #panel-5-ctrl:checked~#panels #panel-5 main {
+    max-height: initial;
+    opacity: 1;
+    padding: 48px 24px;
+  }
+
+  @media all and (max-width: 767px) {
+    #nav-ctrl:checked~#tabs-list #li-for-panel-1 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #nav-ctrl:checked~#tabs-list #li-for-panel-2 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #nav-ctrl:checked~#tabs-list #li-for-panel-3 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #nav-ctrl:checked~#tabs-list #li-for-panel-4 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #nav-ctrl:checked~#tabs-list #li-for-panel-5 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #open-nav-label {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      cursor: pointer;
+    }
+
+    #nav-ctrl:checked~#tabs-list #open-nav-label {
+      display: none;
+    }
+
+    #close-nav-label {
+      display: block;
+      max-height: 0;
+      overflow-y: hidden;
+      background-color: #444444;
+      color: #ecf0f1;
+      padding: 0px;
+      -webkit-transition: max-height 200ms;
+      transition: max-height 200ms;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 22px;
+      letter-spacing: 1px;
+    }
+
+    #nav-ctrl:checked~#tabs-list #close-nav-label {
+      max-height: 36px;
+      opacity: 1;
+      padding: 12px 24px;
+    }
+
+    #tabs-list {
+      position: relative;
+    }
+
+    #tabs-list label.panel-label {
+      padding: 12px 0;
+    }
+
+    #tabs-list #li-for-panel-1 {
+      max-height: 0;
+      overflow-y: hidden;
+      -webkit-transition: max-height 200ms;
+      transition: max-height 200ms;
+    }
+
+    #tabs-list #li-for-panel-2 {
+      max-height: 0;
+      overflow-y: hidden;
+      -webkit-transition: max-height 200ms;
+      transition: max-height 200ms;
+    }
+
+    #tabs-list #li-for-panel-3 {
+      max-height: 0;
+      overflow-y: hidden;
+      -webkit-transition: max-height 200ms;
+      transition: max-height 200ms;
+    }
+
+    #tabs-list #li-for-panel-4 {
+      max-height: 0;
+      overflow-y: hidden;
+      -webkit-transition: max-height 200ms;
+      transition: max-height 200ms;
+    }
+
+    #tabs-list #li-for-panel-5 {
+      max-height: 0;
+      overflow-y: hidden;
+      -webkit-transition: max-height 200ms;
+      transition: max-height 200ms;
+    }
+
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      background-color: #49b5e7;
+      color: white;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      background-color: #49b5e7;
+      color: white;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      background-color: #49b5e7;
+      color: white;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      background-color: #49b5e7;
+      color: white;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5 {
+      max-height: 46px;
+      opacity: 1;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      background-color: #49b5e7;
+      color: white;
+    }
+
+    #panels .container {
+      width: 100%;
+    }
+
+    #panels section header {
+      display: block;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1 {
+      pointer-events: none;
+      cursor: default;
+      -webkit-transform: translate3d(0, 1px, 0);
+      transform: translate3d(0, 1px, 0);
+      box-shadow: none;
+      border-right: none;
+    }
+
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1.last {
+      border-right: 1px solid transparent;
+    }
+
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1+li {
+      border-left: 1px solid #dfdfdf;
+    }
+
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      padding-top: 26px;
+    }
+
+    #panel-1-ctrl:checked~#tabs-list #li-for-panel-1 label.panel-label::after {
+      height: 6px;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2 {
+      pointer-events: none;
+      cursor: default;
+      -webkit-transform: translate3d(0, 1px, 0);
+      transform: translate3d(0, 1px, 0);
+      box-shadow: none;
+      border-right: none;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2.last {
+      border-right: 1px solid transparent;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2+li {
+      border-left: 1px solid #dfdfdf;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      padding-top: 26px;
+    }
+
+    #panel-2-ctrl:checked~#tabs-list #li-for-panel-2 label.panel-label::after {
+      height: 6px;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3 {
+      pointer-events: none;
+      cursor: default;
+      -webkit-transform: translate3d(0, 1px, 0);
+      transform: translate3d(0, 1px, 0);
+      box-shadow: none;
+      border-right: none;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3.last {
+      border-right: 1px solid transparent;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3+li {
+      border-left: 1px solid #dfdfdf;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      padding-top: 26px;
+    }
+
+    #panel-3-ctrl:checked~#tabs-list #li-for-panel-3 label.panel-label::after {
+      height: 6px;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4 {
+      pointer-events: none;
+      cursor: default;
+      -webkit-transform: translate3d(0, 1px, 0);
+      transform: translate3d(0, 1px, 0);
+      box-shadow: none;
+      border-right: none;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4.last {
+      border-right: 1px solid transparent;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4+li {
+      border-left: 1px solid #dfdfdf;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      padding-top: 26px;
+    }
+
+    #panel-4-ctrl:checked~#tabs-list #li-for-panel-4 label.panel-label::after {
+      height: 6px;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5 {
+      pointer-events: none;
+      cursor: default;
+      -webkit-transform: translate3d(0, 1px, 0);
+      transform: translate3d(0, 1px, 0);
+      box-shadow: none;
+      border-right: none;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5.last {
+      border-right: 1px solid transparent;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5+li {
+      border-left: 1px solid #dfdfdf;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5 label.panel-label {
+      background-color: white;
+      color: #49b5e7;
+      padding-top: 26px;
+    }
+
+    #panel-5-ctrl:checked~#tabs-list #li-for-panel-5 label.panel-label::after {
+      height: 6px;
+    }
+
+    ul#tabs-list {
+      text-align: center;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    ul#tabs-list li {
+      display: inline-block;
+      text-align: center;
+      font-size: 0.875em;
+      width: 18%;
+      box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.05);
+      border-right: 1px solid #dfdfdf;
+      position: relative;
+    }
+
+    ul#tabs-list li:hover {
+      -webkit-transition: none;
+      transition: none;
+      border-right: none;
+    }
+
+    ul#tabs-list li:hover.last {
+      border-right: 1px solid transparent;
+    }
+
+    ul#tabs-list li:hover+li {
+      border-left: 1px solid #dfdfdf;
+    }
+
+    ul#tabs-list li label.panel-label {
+      position: relative;
+      padding: 24px 0;
+    }
+
+    ul#tabs-list li label.panel-label::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 100%;
+      background-color: #49b5e7;
+      height: 0;
+      -webkit-transition-property: height;
+      transition-property: height;
+      -webkit-transition-duration: 200ms;
+      transition-duration: 200ms;
+    }
+
+    ul#tabs-list li label.panel-label:hover {
+      padding-top: 25px;
+    }
+
+    ul#tabs-list li label.panel-label:hover::after {
+      height: 6px;
+    }
+
+    #open-nav-label,
+    #close-nav-label {
+      display: none;
+    }
+
+    #nav-ctrl {
+      display: none;
+    }
+  }
+
+  @media all and (min-width: 900px) {
+    main {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  .panel-radios {
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    width: 20px;
+    opacity: 0.5;
+    z-index: 99;
+  }
+
+  .panel-radios:nth-child(1) {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+
+  .panel-radios:nth-child(2) {
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  .panel-radios:nth-child(3) {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  .panel-radios:nth-child(4) {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  .panel-radios:nth-child(5) {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  .panel-radios:nth-child(6) {
+    top: 30px;
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+    display: block;
+  }
+
+  body {
+    background: #f8f8f8;
+    color: #444444;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  #introduction {
+    width: 90%;
+    margin: 0 auto;
+    padding: 48px 24px;
+    color: white;
+  }
+
+  #introduction h1 {
+    font-weight: 300;
+    text-align: center;
+  }
+
+  main h1 {
+    margin-top: 0;
+    font-weight: 300;
+    color: #49b5e7;
+  }
+
+  main p {
+    line-height: 1.8;
+  }
+
+  main hr {
+    margin: 12px 0;
+    border-top: 1px solid #dfdfdf;
+  }
+
+  label.demo-label {
+    background-color: #49b5e7;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  label.demo-label:hover {
+    background-color: #e74c3c;
+  }
+
+  #demo-child-toggle {
+    display: none;
+  }
+
+  #demo-child-toggle:checked~#demo-parent #demo-child {
+    color: #49b5e7;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #demo-parent {
+    margin-top: 8px;
+  }
+
+  code,
+  pre {
+    color: #49b5e7;
+    font-family: Inconsolata, "Andale Mono", Andale, monowidth;
+    background-color: #ecf0f1;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+  }
+
+  code {
+    padding: 2px 6px;
+  }
+
+  pre {
+    padding: 12px;
+    line-height: 1.6;
+  }
+
+  pre strong {
+    color: #444444;
+    font-weight: normal;
+  }
+
+
+
+  /*===== Vertical Timeline =====*/
+  #conference-timeline {
+    position: relative;
+    max-width: 920px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #conference-timeline .timeline-start,
+  #conference-timeline .timeline-end {
+    display: table;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #00b0bd;
+    padding: 15px 23px;
+    color: #fff;
+    max-width: 5%;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #conference-timeline .conference-center-line {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    margin-left: -2px;
+    background: #00b0bd;
+    z-index: -1;
+  }
+
+  #conference-timeline .conference-timeline-content {
+    padding-top: 67px;
+    padding-bottom: 67px;
+  }
+
+  .timeline-article {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+
+  .timeline-article .content-left-container,
+  .timeline-article .content-right-container {
+    max-width: 44%;
+    width: 100%;
+  }
+
+  .timeline-article .timeline-author {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #242424;
+    text-align: right;
+  }
+
+  .timeline-article .content-left,
+  .timeline-article .content-right {
+    position: relative;
+    width: auto;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .03);
+    padding: 27px 25px;
+  }
+
+  .timeline-article p {
+    margin: 0 0 0 60px;
+    padding: 0;
+    font-weight: 400;
+    color: #242424;
+    font-size: 14px;
+    line-height: 24px;
+    position: relative;
+  }
+
+  .timeline-article p span.article-number {
+    position: absolute;
+    font-weight: 300;
+    font-size: 44px;
+    top: 10px;
+    left: -60px;
+    color: #00b0bd;
+  }
+
+  .timeline-article .content-left-container {
+    float: left;
+  }
+
+  .timeline-article .content-right-container {
+    float: right;
+  }
+
+  .timeline-article .content-left:before,
+  .timeline-article .content-right:before {
+    position: absolute;
+    top: 20px;
+    font-size: 23px;
+    font-family: "FontAwesome";
+    color: #fff;
+  }
+
+  .timeline-article .content-left:before {
+    content: "\f0da";
+    right: -8px;
+  }
+
+  .timeline-article .content-right:before {
+    content: "\f0d9";
+    left: -8px;
+  }
+
+  .timeline-article .meta-date {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 62px;
+    height: 62px;
+    margin-left: -31px;
+    color: #fff;
+    border-radius: 100%;
+    background: #00b0bd;
+  }
+
+  .timeline-article .meta-date .date,
+  .timeline-article .meta-date .month {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .timeline-article .meta-date .date {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .timeline-article .meta-date .month {
+    font-size: 18px;
+    line-height: 10px;
+  }
+
+  /*===== // Vertical Timeline =====*/
+
+  /*===== Resonsive Vertical Timeline =====*/
+  @media only screen and (max-width: 830px) {
+
+    #conference-timeline .timeline-start,
+    #conference-timeline .timeline-end {
+      margin: 0;
+    }
+
+    #conference-timeline .conference-center-line {
+      margin-left: 0;
+      left: 50px;
+    }
+
+    .timeline-article .meta-date {
+      margin-left: 0;
+      left: 20px;
+    }
+
+    .timeline-article .content-left-container,
+    .timeline-article .content-right-container {
+      max-width: 100%;
+      width: auto;
+      float: none;
+      margin-left: 110px;
+      min-height: 53px;
+    }
+
+    .timeline-article .content-left-container {
+      margin-bottom: 20px;
+    }
+
+    .timeline-article .content-left,
+    .timeline-article .content-right {
+      padding: 10px 25px;
+      min-height: 65px;
+    }
+
+    .timeline-article .content-left:before {
+      content: "\f0d9";
+      right: auto;
+      left: -8px;
+    }
+
+    .timeline-article .content-right:before {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .timeline-article p {
+      margin: 0;
+    }
+
+    .timeline-article p span.article-number {
+      display: none;
+    }
+
+  }
+
+  /*===== // Resonsive Vertical Timeline =====*/
+</style>
+{% endblock %}

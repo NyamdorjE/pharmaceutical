@@ -63,3 +63,34 @@ class LawList(generic.ListView):
         context['menu'] = Menu.objects.all()
         context['dropdown'] = DropMenu.objects.all()
         return context
+
+class LawDetail(generic.ListView):
+    model = Law
+    template_name = "research/lawdetail.html"  
+    def get_context_data(self, **kwargs):
+        context = super(LawDetail, self).get_context_data()
+        context['law'] = Law.objects.filter(category="1")
+        context['menu'] = Menu.objects.all()
+        context['dropdown'] = DropMenu.objects.all()
+        return context
+
+
+class LawDetail2(generic.ListView):
+    model = Law
+    template_name = "research/lawdetail2.html"  
+    def get_context_data(self, **kwargs):
+        context = super(LawDetail2, self).get_context_data()
+        context['law'] = Law.objects.filter(category="2")
+        context['menu'] = Menu.objects.all()
+        context['dropdown'] = DropMenu.objects.all()
+        return context
+
+class LawDetail3(generic.ListView):
+    model = Law
+    template_name = "research/lawdetail3.html"  
+    def get_context_data(self, **kwargs):
+        context = super(LawDetail3, self).get_context_data()
+        context['law'] = Law.objects.filter(category="3")
+        context['menu'] = Menu.objects.all()
+        context['dropdown'] = DropMenu.objects.all()
+        return context

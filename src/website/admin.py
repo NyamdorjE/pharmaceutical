@@ -1,5 +1,18 @@
 from django.contrib import admin
-from .models import Menu, DropMenu, Mission, Vision, Testimonial, Presidents, CountNumber, faq, partner, aboutpagemission
+from .models import (
+    Menu,
+    DropMenu,
+    Mission,
+    Vision,
+    Testimonial,
+    Presidents,
+    CountNumber,
+    faq,
+    partner,
+    aboutpagemission,
+    Carousel,
+)
+
 # Register your models here.
 
 
@@ -22,3 +35,5 @@ admin.site.register(faq)
 admin.site.register(partner)
 
 admin.site.register(aboutpagemission)
+
+admin.site.register(Carousel)

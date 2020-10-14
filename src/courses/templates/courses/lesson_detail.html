@@ -15,84 +15,105 @@
 
 
 <!-- Page info end -->
-
-	<div  id="video" class='container'>
+<section id="blog" class="blog">
+	<div id="video" class='container'>
 		<div class="alert alert-info" role="alert">
 			Бүрэн дэлгэцээр үзэхийн тулд видеог 2 удаа дарна уу!
-		  </div>
+		</div>
 		<div class='row'>
-			<div class='col-sm-7 col-md-7 col-lg-7'>
-				
+			<div class='col-sm-7 col-md-7 col-lg-7 entries'>
+
 				{% if lesson is not None %}
 				<video width='600' controls>
 					<source src="{{ lesson.video_id.url }}" type='video/mp4'>
-						Вэб хөтөчөө солиж үзнэ үү.
-					</video>
+					Вэб хөтөчөө солиж үзнэ үү.
+				</video>
 				<h3> {{ lesson.title}} </h3>
-			<div class="blog-post-title">
-				<p style="heigth: 29px; text-align: right;">
-			
-				<i class="fa fa-folder-open-o	"> 5</i>
-				<i class="fa fa-clock-o"> 22:00 </i> </p>
-				
-				<p style="overflow-wrap:break-word;"> {{ lesson.content|safe  }}</p>
-			</div>
+				<div class="blog-post-title">
+					<p style="heigth: 29px; text-align: right;">
+
+						<i class="fa fa-folder-open-o	"> 5</i>
+						<i class="fa fa-clock-o"> 22:00 </i> </p>
+
+					<p style="overflow-wrap:break-word;"> {{ lesson.content|safe  }}</p>
+				</div>
 
 				<div class="text-center">
-				<a href="javascript:history.back()" class="mb-5 mt-2 btn btn-primary">Буцах</a>
+					<a href="javascript:history.back()" class="mb-5 mt-2 btn btn-primary">Буцах</a>
 				</div>
 				{% else %}
 				<h3> Худалдаж авах шаардлагтай</h3>
 				<p>Бүртгүүлээд худалдаж авна уу.</p>
 				<br>
-				<a href="{% url 'memberships:select_membership' %}"><button class="btn btn-warning">Upgrade Membership</button></a>
-				<hr> 
+				<a href="{% url 'memberships:select_membership' %}"><button class="btn btn-warning">Upgrade
+						Membership</button></a>
+				<hr>
 				{% endif %}
 			</div>
-			
-			
+
+
 			<div class='col-sm-5 col-md-5'>
-				<div class="cl-item" id="lessons">
-					
-					<div class="cl-item" id="lessons">
+				<div class="sidebar" data-aos="fade-left">
+
+
+					<div class="sidebar-title" style="padding-bottom: 20px;">
+						<h4>Шалгалт өгөх</h4>
+						<ol class="activity-feed" style="padding-top: 20px;">
+							<p><em>Та зөвхөн 1 удаа шалгалт өгөх боломжтой.</em></p>
+							<ol class="activity-feed">
+
+								{% if lesson.quiz %}
+								<a href="{% url 'quiz_start_page' slug=lesson.slug %}"
+									class="button button-border button-circle button-dark">{% trans "Шалгалт өгөх" %}</a>
+								{% else %}
+								<p>Шалгалт байхгүй</p>
+								{% endif %}
+
+							</ol>
+						</ol>
+					</div>
+
+					<div class="sidebar-title" id="lessons">
 						<h4>Энэ ангид орох хичээлүүд</h4>
 						{% if course.lessons != None  %}
-							{% for lesson in course.lessons %}
-							<div data-aos="fade-right" >
-							<h5 class="pb-3" style="border-bottom: 1px solid gray; padding-bottom: 10px;">Хичээл №-  {{lesson.position}} <a id="vazhdo" href="{{ lesson.get_absolute_url }}#video"><span class="pl-4">{{lesson.title}}</span></a></h5>
-							</div>
-							{% endfor %}
+						{% for lesson in course.lessons %}
+						<div data-aos="fade-left">
+							<h5 class="pb-3" style="border-bottom: 1px solid gray; padding-bottom: 10px;">Хичээл №-
+								{{lesson.position}} <a id="vazhdo" href="{{ lesson.get_absolute_url }}#video"><span
+										class="pl-4">{{lesson.title}}</span></a></h5>
+						</div>
+						{% endfor %}
 						{% endif %}
 						{% if course.lessons|length == 0 %}
 						<div class="alert alert-danger">Хичээл байхгүй байна.!!</div>
-						{% endif %} 
+						{% endif %}
 					</div>
-     
+
 				</div>
 			</div>
 		</div>
 	</div>
+</section>
 
 
 <style>
+	.blog-post-title p {
+		padding: 5px 0;
+		border-top: 1px solid #b4bfc3;
+	}
 
-.blog-post-title p {
-    padding: 5px 0;
-    border-top: 1px solid #b4bfc3;
-}
+	.blog-post-title i {
+		padding-right: 50px;
+	}
 
-.blog-post-title i{
-	padding-right: 50px;
-}
-
-.hidden-desktop {
-    display: none !important;
-}
+	.hidden-desktop {
+		display: none !important;
+	}
 </style>
 {% endblock content %}
 
 
 {% else%}
-		<p>hello</p>
-		
+<p>hello</p>
+
 {% endif %}

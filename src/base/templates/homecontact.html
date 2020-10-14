@@ -72,7 +72,7 @@
           </div>
 
           <div class="col-lg-6">
-        <form action="" method="POST" role="form" class="php-email-form">
+        <form action="" method="POST" role="form" >
                   {% csrf_token %}
               <div class="form-row">
                 <div class="col form-group">
@@ -89,9 +89,8 @@
                 {{ form.message|as_crispy_field }}
               </div>
               <div class="mb-3">
-            <div class="loading">Loading</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
+            <div class="sent-message">Амжилттай илгээгдлээ.</div>
           </div>
           <div class="text-center"><button type="submit">Илгээх</button></div>
             </form>

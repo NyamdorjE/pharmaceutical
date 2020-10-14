@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path, include
+from django.urls import path, include, re_path
 from src.poll import views as poll_views
 from django.contrib.auth import views as auth_views
 from django.conf.urls import include, url
@@ -27,23 +27,21 @@ from src.base.models import contact
 from src.base.models import request
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('src.accounts.urls')),
-    path('', include('src.news.urls')),
-    path('', include('src.research.urls')),
-    path('', include('src.poll.urls')),
-    path('', include('src.courses.urls')),
-    path('', include('src.website.urls')),
-    path('contact/', contact.contact, name='contact'),
-    path('request/', request.request, name='request'),
-    url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
-    path('i18n/', include('django_translation_flags.urls')),
-
-
-
+    path("admin/", admin.site.urls),
+    path("", include("src.accounts.urls")),
+    path("", include("src.news.urls")),
+    path("", include("src.research.urls")),
+    path("", include("src.poll.urls")),
+    path("", include("src.courses.urls")),
+    path("", include("src.website.urls")),
+    path("", include("src.quiz.urls")),
+    path("contact/", contact.contact, name="contact"),
+    path("request/", request.request, name="request"),
+    url(r"^accounts/", include("registration.backends.default.urls")),
+    url(r"^i18n/", include("django.conf.urls.i18n")),
+    path("i18n/", include("django_translation_flags.urls")),
+    re_path(r"^ckeditor/", include("ckeditor_uploader.urls")),
     # path('search', search, name='blog-search'),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

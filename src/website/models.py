@@ -10,16 +10,16 @@ from sorl.thumbnail import ImageField, get_thumbnail
 
 class Menu(models.Model):
     name = models.CharField(max_length=200)
-    icon = models.FileField(verbose_name=_(
-        "Icon"), upload_to="media/navigation/icon", max_length=100)
+    icon = models.FileField(
+        verbose_name=_("Icon"), upload_to="media/navigation/icon", max_length=100
+    )
     url = models.URLField(verbose_name=_("Url"), max_length=200)
     is_special = models.BooleanField(verbose_name=_("boxed"), default=False)
-    position = models.IntegerField(
-        verbose_name=_('Menu position'), default="0")
+    position = models.IntegerField(verbose_name=_("Menu position"), default="0")
 
     class Meta:
         verbose_name = "Navigation menu"
-        ordering = ['position']
+        ordering = ["position"]
 
     def __str__(self):
         return self.name
@@ -27,36 +27,42 @@ class Menu(models.Model):
 
 class DropMenu(models.Model):
     parent_id = models.ForeignKey(
-        "Menu", verbose_name=_("Dropdown navigation child"), on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=255,)
+        "Menu",
+        verbose_name=_("Dropdown navigation child"),
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+    name = models.CharField(
+        max_length=255,
+    )
 
     def __str__(self):
         return self.name
 
 
 class Vision(models.Model):
-    icon = models.FileField(upload_to='media/icon',
-                            max_length=100, null=True, blank=True)
+    icon = models.FileField(
+        upload_to="media/icon", max_length=100, null=True, blank=True
+    )
     title = models.CharField(max_length=100)
-    description = RichTextField(
-        blank=True, null=True, verbose_name=_('Контэнт'))
+    description = RichTextField(blank=True, null=True, verbose_name=_("Контэнт"))
     position = models.IntegerField(default="0")
 
     class Meta:
         verbose_name = _("Vision")
-        ordering = ['position']
+        ordering = ["position"]
 
     def __str__(self):
         return self.title
 
 
 class Mission(models.Model):
-    title = RichTextField(blank=True, null=True,
-                          verbose_name=_('Mission content'))
+    title = RichTextField(blank=True, null=True, verbose_name=_("Mission content"))
 
     class Meta:
-        verbose_name = _('Mission')
-        ordering = ['title']
+        verbose_name = _("Mission")
+        ordering = ["title"]
 
     def __str__(self):
         return self.title
@@ -68,7 +74,7 @@ class Testimonial(models.Model):
 
     class Meta:
         verbose_name = _("Testimonial")
-        ordering = ['title']
+        ordering = ["title"]
 
     def __str__(self):
         return self.title
@@ -77,56 +83,73 @@ class Testimonial(models.Model):
 class Presidents(models.Model):
     title = models.CharField(max_length=250)
     description = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='media/website/presidents/',
-                              height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(
+        upload_to="media/website/presidents/",
+        height_field=None,
+        width_field=None,
+        max_length=None,
+    )
     position = models.IntegerField(default="0")
 
     class Meta:
-        verbose_name = _('Presidents')
-        ordering = ['-title']
+        verbose_name = _("Presidents")
+        ordering = ["-title"]
 
     def __str__(self):
         return self.title
 
 
 class CountNumber(models.Model):
-    number = models.IntegerField(verbose_name=_('Numbers'))
-    description = models.CharField(
-        max_length=255, verbose_name=_('Description'))
-    position = models.IntegerField(default='0')
+    number = models.IntegerField(verbose_name=_("Numbers"))
+    description = models.CharField(max_length=255, verbose_name=_("Description"))
+    position = models.IntegerField(default="0")
 
     class Meta:
-        verbose_name = _('Count number')
-        ordering = ['position']
+        verbose_name = _("Count number")
+        ordering = ["position"]
 
 
 class faq(models.Model):
-    question = models.CharField(max_length=500, verbose_name=_('Question'))
-    answer = models.CharField(max_length=500, verbose_name=_('Answer'))
-    position = models.IntegerField(default='0')
+    question = models.CharField(max_length=500, verbose_name=_("Question"))
+    answer = models.CharField(max_length=500, verbose_name=_("Answer"))
+    position = models.IntegerField(default="0")
 
     class Meta:
-        verbose_name = _('Faq')
-        ordering = ['position']
+        verbose_name = _("Faq")
+        ordering = ["position"]
 
     def __str__(self):
         return self.question
 
 
 class partner(models.Model):
-    image = models.FileField(upload_to='media/website/presidents/')
-    position = models.IntegerField(default='0')
+    image = models.FileField(upload_to="media/website/presidents/")
+    position = models.IntegerField(default="0")
 
     class Meta:
         verbose_name = _("partner")
-        ordering = ['position']
+        ordering = ["position"]
 
 
 class aboutpagemission(models.Model):
-    title = models.CharField(max_length=255, verbose_name=_('Title'))
-    description = models.CharField(
-        max_length=255, verbose_name=_('Description'))
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
+    description = models.CharField(max_length=255, verbose_name=_("Description"))
     icon = models.CharField(max_length=255)
 
     class Meta:
         verbose_name = _("aboutpagemission")
+
+
+class Carousel(models.Model):
+    alt_text = models.CharField(
+        max_length=255, verbose_name=_("Carousel image alt text")
+    )
+    image = models.ImageField(upload_to="media/Carousel")
+    title = models.CharField(max_length=255, verbose_name=_("Carousel Title"))
+    description = models.CharField(max_length=500, verbose_name=_("Description"))
+
+    class Meta:
+        verbose_name = _("Carousel")
+
+    def __str__(self):
+        return self.title
