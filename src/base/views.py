@@ -74,8 +74,8 @@ class RedirectView(g.base.RedirectView):
 
 
 def error_404(request, exception):
-    return render(request, "base/404.html", status=404)
+    return render(request, "404.html", status=404)
 
 
 def handler500(request):
-    return render(request, "base/500.html", status=500)
+    return render(request, "500.html", status=500)
