@@ -11,24 +11,27 @@ from django.http import HttpResponse
 
 
 class BaseMixin(object):
-
     def get_template_names(self):
         if self.template_name is None:
             # class name to template file name
             cname = self.__class__.__name__
-            name = re.sub('(.)([A-Z][a-z]+)', r'\1%s\2' % '_', cname)
-            name = re.sub('([a-z0-9])([A-Z])', r'\1%s\2' % '_', name).lower()
+            name = re.sub("(.)([A-Z][a-z]+)", r"\1%s\2" % "_", cname)
+            name = re.sub("([a-z0-9])([A-Z])", r"\1%s\2" % "_", name).lower()
 
-            namef = re.sub('(.)([A-Z][a-z]+)', r'\1%s\2' % '/', cname)
-            namef = re.sub('([a-z0-9])([A-Z])', r'\1%s\2' % '/', namef).lower()
+            namef = re.sub("(.)([A-Z][a-z]+)", r"\1%s\2" % "/", cname)
+            namef = re.sub("([a-z0-9])([A-Z])", r"\1%s\2" % "/", namef).lower()
 
             # get app_label
-            app_path = self.__module__[:-len('.views')][len('src.'):]
-            app_path = app_path.replace('.', '/')
+            app_path = self.__module__[: -len(".views")][len("src.") :]
+            app_path = app_path.replace(".", "/")
 
             # prepare template name
-            self.template_names = ['%s/templates/%s.html' % (app_path, name), '%s/%s.html' % (
-                app_path, name), '%s/templates/%s.html' % (app_path, namef), '%s/%s.html' % (app_path, namef)]
+            self.template_names = [
+                "%s/templates/%s.html" % (app_path, name),
+                "%s/%s.html" % (app_path, name),
+                "%s/templates/%s.html" % (app_path, namef),
+                "%s/%s.html" % (app_path, namef),
+            ]
             return self.template_names
 
         return super(BaseMixin, self).get_template_names()
@@ -71,9 +74,8 @@ class RedirectView(g.base.RedirectView):
 
 
 def error_404(request, exception):
-    return render(request, '404.html', status=404)
+    return render(request, "base/404.html", status=404)
 
 
-def my_test_500_view(request):
-    # Return an "Internal Server Error" 500 response code.
-    return HttpResponse(status=500)
+def handler500(request):
+    return render(request, "base/500.html", status=500)

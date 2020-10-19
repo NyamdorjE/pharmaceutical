@@ -46,4 +46,4 @@ urlpatterns = [
 
 
 handler404 = "src.base.views.error_404"
-handler500 = "src.base.views.my_test_500_view"
+handler500 = "src.base.views.handler500"

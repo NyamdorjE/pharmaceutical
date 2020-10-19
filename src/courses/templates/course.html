@@ -4,81 +4,86 @@
 {% load static %}
 
 {% block content %}
- <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Сургалт</h2>
-          <ol>
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Сургалт</h2>
+      <ol>
         <li><a href="{% url 'website-homepage'%}">Нүүр хуудас</a></li>
-            <li>Сургалт</li>
-          </ol>
-        </div>
+        <li>Сургалт</li>
+      </ol>
+    </div>
 
+  </div>
+</section><!-- End Breadcrumbs -->
+
+<div class="container marg50" style="padding-top: 50px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="filters-container-portfolio-4" class="cbp-l-filters-button">
+        {% for category in categorylist %}
+        <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">{{ category.title }}<div
+            class="cbp-filter-counter"></div></button>
+        {% endfor %}
+        <button class="cbp-filter-item-active cbp-filter-item"> <a href="{% url 'contact' %}"
+            style="color: white;">Сургалт хүсэх </a>
+          <div class="cbp-filter-counter"></div>
+        </button>
       </div>
-    </section><!-- End Breadcrumbs -->
-      
-      <div class="container marg50" style="padding-top: 50px;">
-        <div class="row">
-          <div class="col-lg-12">
-            <div id="filters-container-portfolio-4" class="cbp-l-filters-button">
-            {% for category in categorylist %}
-              <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">{{ category.title }}<div class="cbp-filter-counter"></div></button>
-            {% endfor %}
-            <button  class="cbp-filter-item-active cbp-filter-item"> <a href="{% url 'contact' %}" style="color: white;">Сургалт хүсэх </a> <div class="cbp-filter-counter"></div></button>
-            </div>
-          </div>
-        </div>
-      </div>
-     
-     <div class="container mt-2">
-<!--   <div class="card card-block mb-2">
+    </div>
+  </div>
+</div>
+
+<div class="container mt-2">
+  <!--   <div class="card card-block mb-2">
     <h4 class="card-title">Card 1</h4>
     <p class="card-text">Welcom to bootstrap card styles</p>
     <a href="#" class="btn btn-primary">Submit</a>
   </div>   -->
-    <section id="courses" class="courses">
-      <div class="container" data-aos="fade-up">
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-            {% for cat in category %}
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-             <a href="/courses/{{ cat.id }}"> <img src="{% if cat.image %}{{ cat.image.url}}{% endif %}" alt="" class="img-thumbnail"></a>
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>{{ cat.category }}</h4>
-                  <p class="price">{{ cat.price }}</p>
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        {% for cat in category %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="course-item">
+            <a href="/courses/{{ cat.id }}"> <img src="{% if cat.image %}{{ cat.image.url}}{% endif %}" alt=""
+                class="img-thumbnail"></a>
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>{{ cat.category }}</h4>
+                <p class="price">{{ cat.price }}</p>
+              </div>
+
+              <h3> <a href="/courses/{{ cat.id }}">{{ cat.title }}</a></h3>
+              <p>{{ cat.description|slice:":60" | safe}}</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <a href="/courses/{{ cat.id }}"> <button>Хичээл үзэх</button></a>
                 </div>
-
-                <h3> <a href="/courses/{{ cat.id }}">{{ cat.title }}</a></h3>
-                <p>{{ cat.description|slice:":60" | safe}}</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center"> 
-                    <a href="/courses/{{ cat.id }}"> <button>Хичээл үзэх</button></a>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;50
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;65
-                  </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <i class="bx bx-user"></i>&nbsp;
+                  &nbsp;&nbsp;
+                  <i class="bx bx-heart"></i>&nbsp;
                 </div>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div>
+        </div> <!-- End Course Item-->
 
-         {% endfor %}
-
-        </div>
+        {% endfor %}
 
       </div>
-    </section><!-- End Courses Section -->
-    </div>
-  </div>
-  </body>
 
-  
+    </div>
+  </section><!-- End Courses Section -->
+</div>
+</div>
+</body>
+
+
 </html>
 
 {% endblock %}
