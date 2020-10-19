@@ -46,11 +46,6 @@ class News(models.Model):
     )
     updated_on = models.DateTimeField(auto_now=True, verbose_name=_("Updated on"))
     is_special = models.BooleanField(default=False)
-    hit_count_generic = GenericRelation(
-        HitCount,
-        object_id_field="object_p",
-        related_query_name="hit_count_generic_relation",
-    )
 
     class Meta:
         verbose_name = _("Article")
