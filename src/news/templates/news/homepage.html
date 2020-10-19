@@ -8,361 +8,370 @@
 
 
 {% block content %}
-  
-  <main id="main">
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients clients">
-      <div class="container">
 
-        <div class="row">
+<main id="main">
+  <!-- ======= Clients Section ======= -->
+  <section id="clients" class="clients clients">
+    <div class="container">
+
+      <div class="row">
         {% for partner in partner %}
-         <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% if partner.image %}{{partner.image.url}}{% endif %}" class="img-fluid" alt="" data-aos="zoom-in">
-          </div>
+        <div class="col-lg-2 col-md-4 col-6">
+          <img src="{% if partner.image %}{{partner.image.url}}{% endif %}" class="img-fluid" alt="" data-aos="zoom-in">
+        </div>
         {% endfor %}
-        </div>
       </div>
-    </section><!-- End Clients Section -->
+    </div>
+  </section><!-- End Clients Section -->
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>{% trans 'Бидний тухай' %}</h2>
-        </div>
-        <div class="row content">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <p>
-              {% trans 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  <!-- ======= About Us Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>{% trans 'Бидний тухай' %}</h2>
+      </div>
+      <div class="row content">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+          <p>
+            {% trans 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.' %}
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> {% trans 'Ullamco laboris nisi ut aliquip ex ea commodo consequat'%}</li>
-              <li><i class="ri-check-double-line"></i> {% trans 'Duis aute irure dolor in reprehenderit in voluptate velit' %}</li>
-              <li><i class="ri-check-double-line"></i> {% trans 'Ullamco laboris nisi ut aliquip ex ea commodo consequat' %}</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <p>
-              {% trans 'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i>
+              {% trans 'Ullamco laboris nisi ut aliquip ex ea commodo consequat'%}</li>
+            <li><i class="ri-check-double-line"></i>
+              {% trans 'Duis aute irure dolor in reprehenderit in voluptate velit' %}</li>
+            <li><i class="ri-check-double-line"></i>
+              {% trans 'Ullamco laboris nisi ut aliquip ex ea commodo consequat' %}</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+          <p>
+            {% trans 'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
               culpa qui officia deserunt mollit anim id est laborum.' %}
-            </p>
-            
-          </div>
+          </p>
+
         </div>
-
       </div>
-    </section><!-- End About Us Section -->
 
-    <!-- ======= Counts Section ======= -->
-   <section id="why-us" class="why-us">
-      <div class="container">
+    </div>
+  </section><!-- End About Us Section -->
 
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="content">
-              <h3></h3>
-              <p>
+  <!-- ======= Counts Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4 d-flex align-items-stretch">
+          <div class="content">
+            <h3></h3>
+            <p>
               {% for mission in mission|slice:'0:1' %}
-                      {{ mission.title|safe }}
+              {{ mission.title|safe }}
               {% endfor %}
 
-              </p>
-             
-            </div>
-          </div>
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-               {% for vision in vision|slice:'0:3' %}
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">   
-                    <i class='bx bx-line-chart'></i>
-                   
-                    <h4>{{ vision.title|safe }}</h4>
-                    <p>{{ vision.description|safe}}</p>
-                              
-                  </div>
-                </div>
-             {% endfor %}
-              </div>
-            </div><!-- End .content-->
+            </p>
+
           </div>
         </div>
-      </div>
-    </section><!-- End Why Us Section -->
-      
-    <!-- ======= Counts Section ======= -->
-   <section id="counts" class="counts">
-      <div class="container">
-        <div class="text-center title">
-          <h3>{% trans 'Статик тоон мэдээлэл' %}</h3>
-        </div>
-        <div class="row counters">
-          {% for count in count|slice:'0:4' %}
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">{{ count.number }}</span>
-            <p> {{ count.description }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section><!-- End Counts Section -->
-    <!-- ======= Services Section ======= -->
-    <section id="assistant" class="assistant section-bg" style="background-color: #f6f7f9;">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="section-title" data-aos="fade-right">
-              <h2 style="font-size: 24px;">{% trans 'Үйл ажиллагаа' %}</h2>
-              <p>Magnam dolores commodi suscipit nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-            </div>
-          </div>
-          <div class="col-lg-8">
+        <div class="col-lg-8 d-flex align-items-stretch">
+          <div class="icon-boxes d-flex flex-column justify-content-center">
             <div class="row">
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-                  <div class="icon"><i class="icofont-users"></i></div>
-                  <h4><a href="{% url 'accounts:sign_up' %}">{% trans 'Гишүүд' %}</a></h4>
-                  <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              {% for vision in vision|slice:'0:3' %}
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box mt-4 mt-xl-0">
+                  <i class='bx bx-line-chart'></i>
+
+                  <h4>{{ vision.title|safe }}</h4>
+                  <p>{{ vision.description|safe}}</p>
+
                 </div>
               </div>
+              {% endfor %}
+            </div>
+          </div><!-- End .content-->
+        </div>
+      </div>
+    </div>
+  </section><!-- End Why Us Section -->
 
-              <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-                  <div class="icon"><i class="bx bx-file"></i></div>
-                  <h4><a href="{% url 'news-news-list' %}">{% trans 'Мэдээ мэдээлэл' %}</a></h4>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                </div>
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts">
+    <div class="container">
+      <div class="text-center title">
+        <h3>{% trans 'Статик тоон мэдээлэл' %}</h3>
+      </div>
+      <div class="row counters">
+        {% for count in count|slice:'0:4' %}
+        <div class="col-lg-3 col-6 text-center">
+          <span data-toggle="counter-up">{{ count.number }}</span>
+          <p> {{ count.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section><!-- End Counts Section -->
+  <!-- ======= Services Section ======= -->
+  <section id="assistant" class="assistant section-bg" style="background-color: #f6f7f9;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="section-title" data-aos="fade-right">
+            <h2 style="font-size: 24px;">{% trans 'Үйл ажиллагаа' %}</h2>
+
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-md-6 d-flex align-items-stretch">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon"><i class="icofont-users"></i></div>
+                <h4><a href="{% url 'accounts:sign_up' %}">{% trans 'Гишүүд' %}</a></h4>
+                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
               </div>
+            </div>
 
-              <div class="col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="icon"><i class="icofont-briefcase"></i></div>
-                  <h4><a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a></h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                </div>
+            <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="{% url 'news-news-list' %}">{% trans 'Мэдээ мэдээлэл' %}</a></h4>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
               </div>
+            </div>
 
-              <div class="col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-                  <div class="icon"><i class="icofont-drug"></i></div>
-                  <h4><a href="{% url 'research-research-list' %}">{% trans 'Судалгаа' %}</a></h4>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                </div>
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon"><i class="icofont-briefcase"></i></div>
+                <h4><a href="{% url 'research-law-list' %}">{% trans 'Хууль тогтоомж' %}</a></h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon"><i class="icofont-drug"></i></div>
+                <h4><a href="{% url 'research-research-list' %}">{% trans 'Судалгаа' %}</a></h4>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-   <!-- ======= Blog Section ======= -->
-     <section id="blog" class="blog">
-      <div class="container">
+  <!-- ======= Blog Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container">
       <div class="section-title">
-          <h2>{% trans 'Мэдээ мэдээлэл' %}</h2>
-        </div>
-        <div class="row">
-           {% for news in news|slice:"0:3" %}
-          <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <article class="entry">
-              <div class="entry-img">
-                  <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}" ><img src="{% if news.image %}{{news.image.url}}{% endif %}" alt="" style="width:320px; height: 200px;"/>
-              </div>
-              <h5 class="entry-title">
-                  <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}">
-                       {{ news.title }}  
-                  </a>
-              </h5>
+        <h2>{% trans 'Мэдээ мэдээлэл' %}</h2>
+      </div>
+      <div class="row">
+        {% for news in news|slice:"0:3" %}
+        <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+          <article class="entry">
+            <div class="entry-img">
+              <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}"><img
+                  src="{% if news.image %}{{news.image.url}}{% endif %}" alt="" style="width:320px; height: 200px;" />
+            </div>
+            <h5 class="entry-title">
+              <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}">
+                {{ news.title }}
+              </a>
+            </h5>
             <div class="row">
               <div class="col-12">
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{ news.author }}</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ news.created_on|naturalday:'Y-m-d' }}</time></a></li>
-                </ul>
-              </div>
-              <div class="entry-content" style="padding-top: 10px;">
-                <div class="read-more">
-                    <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}" >
-                        {% trans 'Цааш үзэх' %}
+                <div class="entry-meta">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
+                        href="blog-single.html">{{ news.author }}</a></li>
+                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
+                        href="blog-single.html"><time
+                          datetime="2020-01-01">{{ news.created_on|naturalday:'Y-m-d' }}</time></a></li>
+                  </ul>
+                </div>
+                <div class="entry-content" style="padding-top: 10px;">
+                  <div class="read-more">
+                    <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}">
+                      {% trans 'Цааш үзэх' %}
                     </a>
-                </div>
-              </div>
-              </div>
-            </div>
-            </article><!-- End blog entry -->
-          </div>
-            {% endfor %}
-        </div>
-      </div>
-    </section><!-- End Blog Section -->
-
-<!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>{% trans 'Холбоос' %}</h2>
-        </div>
-        <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-3 col-md-4">
-            <div class="icon-box">
-              <i class="icofont-drug" style="color: #ffbb2c;"></i>
-              <h3><a href="">Эмийн зохистой хэрэглээ</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-doctor" style="color: #5578ff;"></i>
-              <h3><a href="">Эмийн зөвөлгөө</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-ui-add" style="color: #e80368;"></i>
-              <h3><a href="">Эм зөв хэрэглэх тухай</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <i class="icofont-medical-sign-alt" style="color: #e361ff;"></i>
-              <h3><a href="">Эмийн үйлдвэрлэл</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="icofont-medicine" style="color: #47aeff;"></i>
-              <h3><a href="">Эмч зүйч </a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="icofont-medical-sign" style="color: #ffa76e;"></i>
-              <h3><a href="">Ургамал болон эм</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="icofont-pills" style="color: #11dbcf;"></i>
-              <h3><a href="">Тариа</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-              <h3><a href="">Импорт &  Экспорт </a></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Features Section -->
-
-    
-  <section id="popular-courses" class="courses">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>{% trans 'Сургалт' %}</h2>
-        </div>
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-      {% for cat in category|slice:'0:3' %}
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-            <a href="/courses/{{ cat.id }}"> <img src="{% if cat.image %}{{ cat.image.url}}{% endif %}" alt="" style="width: 347px; height: 207px;"></a>
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>{{ cat.category }}</h4>
-                  <p class="price">{{ cat.price }}</p>
-                </div>
-                <h3> <a href="/courses/{{ cat.id }}">{{ cat.title }}</a></h3>
-                <p>{{ cat.description }}.</p>
-              <div class="row">
-              
+                  </div>
                 </div>
               </div>
             </div>
-          </div> 
-          {% endfor %}
-<!-- End Course Item-->
+          </article><!-- End blog entry -->
         </div>
-      </div>
-    </section>
-    <!-- End Popular Courses Section -->
-    
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-        <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
-        {% for testimonial in testimonial%}
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>{{ testimonial.title }}</h3>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  {{ testimonial.comment }}
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
         {% endfor %}
+      </div>
+    </div>
+  </section><!-- End Blog Section -->
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>{% trans 'Холбоос' %}</h2>
+      </div>
+      <div class="row" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+            <i class="icofont-drug" style="color: #ffbb2c;"></i>
+            <h3><a href="">Эмийн зохистой хэрэглээ</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="icofont-doctor" style="color: #5578ff;"></i>
+            <h3><a href="">Эмийн зөвөлгөө</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="icofont-ui-add" style="color: #e80368;"></i>
+            <h3><a href="">Эм зөв хэрэглэх тухай</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <i class="icofont-medical-sign-alt" style="color: #e361ff;"></i>
+            <h3><a href="">Эмийн үйлдвэрлэл</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="icofont-medicine" style="color: #47aeff;"></i>
+            <h3><a href="">Эмч зүйч </a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="icofont-medical-sign" style="color: #ffa76e;"></i>
+            <h3><a href="">Ургамал болон эм</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="icofont-pills" style="color: #11dbcf;"></i>
+            <h3><a href="">Тариа</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+            <h3><a href="">Импорт & Экспорт </a></h3>
+          </div>
         </div>
       </div>
-    </section><!-- End Testimonials Section -->
+    </div>
+  </section><!-- End Features Section -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>{% trans 'Үе үеийн ерөнхийлөгч нар' %}</h2>
-        </div>
 
-        <div class="row">
-    {% for presidents in presidents|slice:'0:4' %}
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="{% if presidents.image %}{{ presidents.image.url }} {% endif %}" style="width: 250px; height: 300px;" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+  <section id="popular-courses" class="courses">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>{% trans 'Сургалт' %}</h2>
+      </div>
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        {% for cat in category|slice:'0:3' %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="course-item">
+            <a href="/courses/{{ cat.id }}"> <img src="{% if cat.image %}{{ cat.image.url}}{% endif %}" alt=""
+                style="width: 347px; height: 207px;"></a>
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>{{ cat.category }}</h4>
+                <p class="price">{{ cat.price }}</p>
               </div>
-              <div class="member-info">
-                <h4>{{ presidents.title }}</h4>
-                <span>{{ presidents.description }} </span>
+              <h3> <a href="/courses/{{ cat.id }}">{{ cat.title }}</a></h3>
+              <p>{{ cat.description }}.</p>
+              <div class="row">
+
               </div>
             </div>
           </div>
-      {% endfor %}
         </div>
+        {% endfor %}
+        <!-- End Course Item-->
       </div>
-    </section><!-- End Team Section -->
+    </div>
+  </section>
+  <!-- End Popular Courses Section -->
 
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>{% trans 'Асуулт хариулт' %}</h2>
-        </div>
-      {% for faq in faq|slice:'0:5' %}    
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-5">
-            <i class="ri-question-line"></i>
-            <h4>{{ faq.question }}</h4>
-          </div>
-          <div class="col-lg-7">
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+      <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
+        {% for testimonial in testimonial%}
+        <div class="testimonial-wrap">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+            <h3>{{ testimonial.title }}</h3>
             <p>
-              {{ faq.answer }}
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              {{ testimonial.comment }}
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
-        </div><!-- End F.A.Q Item-->
-      {% endfor %}
+        </div>
+        {% endfor %}
       </div>
-    </section><!-- End F.A.Q Section -->
-  </main><!-- End #main -->
+    </div>
+  </section><!-- End Testimonials Section -->
+
+  <!-- ======= Team Section ======= -->
+  <section id="team" class="team section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>{% trans 'Үе үеийн ерөнхийлөгч нар' %}</h2>
+      </div>
+
+      <div class="row">
+        {% for presidents in presidents|slice:'0:4' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="{% if presidents.image %}{{ presidents.image.url }} {% endif %}"
+                style="width: 250px; height: 300px;" alt="">
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>{{ presidents.title }}</h4>
+              <span>{{ presidents.description }} </span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section><!-- End Team Section -->
+
+  <!-- ======= F.A.Q Section ======= -->
+  <section id="faq" class="faq">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>{% trans 'Асуулт хариулт' %}</h2>
+      </div>
+      {% for faq in faq|slice:'0:5' %}
+      <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-5">
+          <i class="ri-question-line"></i>
+          <h4>{{ faq.question }}</h4>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            {{ faq.answer }}
+          </p>
+        </div>
+      </div><!-- End F.A.Q Item-->
+      {% endfor %}
+    </div>
+  </section><!-- End F.A.Q Section -->
+</main><!-- End #main -->
 {% endblock %}
