@@ -6,16 +6,16 @@ Production settings
 
 from .common import *
 
-DEBUG = False
-ALLOWED_HOSTS = ['10.0.0.153', 'localhost']
+DEBUG = True
+ALLOWED_HOSTS = ["10.0.0.153", "localhost"]
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pharma',
-        'USER': 'pharmacist',
-        'PASSWORD': '#DiyjoT42u#M',
-        'HOST': 'localhost',
-        'PORT': '5432'
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "pharma",
+        "USER": "pharmacist",
+        "PASSWORD": "#DiyjoT42u#M",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -30,6 +30,10 @@ LOGGING = {
         },
     },
     "loggers": {
-        "django": {"handlers": ["file"], "level": "DEBUG", "propagate": True, },
+        "django": {
+            "handlers": ["file"],
+            "level": "DEBUG",
+            "propagate": True,
+        },
     },
 }
