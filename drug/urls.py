@@ -40,6 +40,7 @@ urlpatterns = [
     url(r"^accounts/", include("registration.backends.default.urls")),
     url(r"^i18n/", include("django.conf.urls.i18n")),
     path("i18n/", include("django_translation_flags.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
     re_path(r"^ckeditor/", include("ckeditor_uploader.urls")),
     # path('search', search, name='blog-search'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

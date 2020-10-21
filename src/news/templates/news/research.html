@@ -5,8 +5,20 @@
 
 {% block content %}
 
-{% include 'news/breadcrumb.html' %}
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
 
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Судалгаа</h2>
+      <ol>
+        <li><a href="{% url 'website-homepage'%}">Нүүр хуудас</a></li>
+        <li>Судалгаа</li>
+      </ol>
+    </div>
+
+  </div>
+</section><!-- End Breadcrumbs -->
 
 <!-- ======= Blog Section ======= -->
 
@@ -91,8 +103,8 @@
         <!-- ENd of Pagination-->
       </div><!-- End blog entries list -->
 
-      {% include 'news/newsidebar.html' %}
 
+      {% include 'news/newsidebar.html' %}
 
     </div>
 

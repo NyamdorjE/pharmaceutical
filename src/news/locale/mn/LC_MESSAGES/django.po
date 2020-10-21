@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-03 14:06+0800\n"
+"POT-Creation-Date: 2020-10-19 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "News"
 msgstr "Мэдээ"
 
-#: src/news/models.py:12 src/news/models.py:37
+#: src/news/models.py:16 src/news/models.py:39
 msgid "Title"
 msgstr "Гарчиг"
 
-#: src/news/models.py:22 src/news/models.py:23
+#: src/news/models.py:21 src/news/models.py:22
 #, fuzzy
 #| msgid "Мэдээ мэдээлэл"
 msgid "Мэдээ ангиллал"
@@ -36,15 +36,15 @@ msgstr "News and information"
 msgid "Category"
 msgstr "Ангиллал"
 
-#: src/news/models.py:39
+#: src/news/models.py:40
 msgid "News Slug"
 msgstr "Мэдээний нөмрөг"
 
-#: src/news/models.py:40
+#: src/news/models.py:41
 msgid "Created by"
 msgstr "Үүсгэсэн"
 
-#: src/news/models.py:41
+#: src/news/models.py:42
 msgid "Content"
 msgstr "Контент"
 
@@ -64,159 +64,169 @@ msgstr "Нийтлэл"
 msgid "Articles"
 msgstr "Нийтлэлүүд"
 
+#: src/news/templates/news/aboutus.html:94
+#: src/news/templates/news/homepage.html:121
+#: src/news/templates/news/index_2.html:71
+msgid "Үйл ажиллагаа"
+msgstr "Activities"
+
+#: src/news/templates/news/aboutus.html:102
+#: src/news/templates/news/homepage.html:130
+msgid "Гишүүд"
+msgstr "Members"
+
+#: src/news/templates/news/aboutus.html:111
+#: src/news/templates/news/homepage.html:138
+#: src/news/templates/news/homepage.html:168
+#: src/news/templates/news/index_2.html:77
+#: src/news/templates/news/index_2.html:80 src/news/templates/news/{% load
+#: static %}.html:94 %}.html:97
+msgid "Мэдээ мэдээлэл"
+msgstr "News and information"
+
+#: src/news/templates/news/aboutus.html:119
+#: src/news/templates/news/homepage.html:146
+#: src/news/templates/news/index_2.html:72 src/news/templates/news/{% load
+#: static %}.html:89
+msgid "Хууль тогтоомж"
+msgstr "Legislation"
+
+#: src/news/templates/news/aboutus.html:127
+#: src/news/templates/news/homepage.html:154
+#: src/news/templates/news/index_2.html:82 src/news/templates/news/{% load
+#: static %}.html:99
+msgid "Судалгаа"
+msgstr "Research"
+
+#: src/news/templates/news/aboutus.html:140
+#: src/news/templates/news/homepage.html:326
+msgid "Үе үеийн ерөнхийлөгч нар"
+msgstr "Presidents"
+
 #: src/news/templates/news/homepage.html:31
-#: src/news/templates/news/index_2.html:63 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:65 src/news/templates/news/{% load
 #: static %}.html:84 %}.html:334
 msgid "Бидний тухай"
 msgstr "About us"
 
-#: src/news/templates/news/homepage.html:40
-#: src/news/templates/news/homepage.html:42
+#: src/news/templates/news/homepage.html:41
+#: src/news/templates/news/homepage.html:45
 msgid "Ullamco laboris nisi ut aliquip ex ea commodo consequat"
 msgstr ""
 
-#: src/news/templates/news/homepage.html:41
+#: src/news/templates/news/homepage.html:43
 msgid "Duis aute irure dolor in reprehenderit in voluptate velit"
 msgstr ""
 
-#: src/news/templates/news/homepage.html:100
+#: src/news/templates/news/homepage.html:103
 #, fuzzy
 #| msgid "Мэдээ мэдээлэл"
 msgid "Статик тоон мэдээлэл"
 msgstr "News and information"
 
-#: src/news/templates/news/homepage.html:118
-#: src/news/templates/news/services.html:38
-msgid "Үйл ажиллагаа"
-msgstr "Activities"
-
-#: src/news/templates/news/homepage.html:127
-#: src/news/templates/news/services.html:46
-msgid "Гишүүд"
-msgstr "Members"
-
-#: src/news/templates/news/homepage.html:135
-#: src/news/templates/news/homepage.html:165
-#: src/news/templates/news/index_2.html:73
-#: src/news/templates/news/index_2.html:76
-#: src/news/templates/news/services.html:55 src/news/templates/news/{% load
-#: static %}.html:94 %}.html:97
-msgid "Мэдээ мэдээлэл"
-msgstr "News and information"
-
-#: src/news/templates/news/homepage.html:143
-#: src/news/templates/news/index_2.html:68
-#: src/news/templates/news/services.html:63 src/news/templates/news/{% load
-#: static %}.html:89
-msgid "Хууль тогтоомж"
-msgstr "Legislation"
-
-#: src/news/templates/news/homepage.html:151
-#: src/news/templates/news/index_2.html:78
-#: src/news/templates/news/services.html:71 src/news/templates/news/{% load
-#: static %}.html:99
-msgid "Судалгаа"
-msgstr "Research"
-
-#: src/news/templates/news/homepage.html:190
+#: src/news/templates/news/homepage.html:197
 msgid "Цааш үзэх"
 msgstr "Read more"
 
-#: src/news/templates/news/homepage.html:207
+#: src/news/templates/news/homepage.html:214
 #, fuzzy
 #| msgid "Холбоо барих"
 msgid "Холбоос"
 msgstr "Contact us"
 
-#: src/news/templates/news/homepage.html:266
-#: src/news/templates/news/index_2.html:82 src/news/templates/news/{% load
+#: src/news/templates/news/homepage.html:273
+#: src/news/templates/news/index_2.html:86 src/news/templates/news/{% load
 #: static %}.html:103
 msgid "Сургалт"
 msgstr "Course"
 
-#: src/news/templates/news/homepage.html:318
-#: src/news/templates/news/services.html:85
-msgid "Үе үеийн ерөнхийлөгч нар"
-msgstr "Presidents"
-
-#: src/news/templates/news/homepage.html:350
+#: src/news/templates/news/homepage.html:359
 msgid "Асуулт хариулт"
 msgstr "FAQ"
 
-#: src/news/templates/news/index_2.html:61 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:63 src/news/templates/news/{% load
 #: static %}.html:82 %}.html:333
 msgid "Нүүр хуудас"
 msgstr "Home page"
 
-#: src/news/templates/news/index_2.html:65 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:67 src/news/templates/news/{% load
 #: static %}.html:86
 msgid "Компаны тухай"
 msgstr "About our company"
 
-#: src/news/templates/news/index_2.html:66 src/news/templates/news/{% load
-#: static %}.html:87
-msgid "Түүхэн замнал"
-msgstr "Timeline"
-
-#: src/news/templates/news/index_2.html:75 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:79 src/news/templates/news/{% load
 #: static %}.html:96
 msgid "Онцлох мэдээ"
 msgstr "Featured news"
 
-#: src/news/templates/news/index_2.html:77 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:81 src/news/templates/news/{% load
 #: static %}.html:98
 msgid "Урлаг, Спорт"
 msgstr "Art, sport"
 
-#: src/news/templates/news/index_2.html:84 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:88
+#, fuzzy
+#| msgid "Сургалт хүсэх"
+msgid "Сургалт үзэх"
+msgstr "Course whislist"
+
+#: src/news/templates/news/index_2.html:89 src/news/templates/news/{% load
 #: static %}.html:105
 msgid "Сургалт хүсэх"
 msgstr "Course whislist"
 
-#: src/news/templates/news/index_2.html:85 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:90 src/news/templates/news/{% load
 #: static %}.html:106
 msgid "Санал асуулга"
 msgstr "Poll"
 
-#: src/news/templates/news/index_2.html:91 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:96 src/news/templates/news/{% load
 #: static %}.html:112
 msgid "Хэрэглэгч"
 msgstr "User"
 
-#: src/news/templates/news/index_2.html:95 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:100 src/news/templates/news/{% load
 #: static %}.html:116
 msgid "Нууц үг солих"
 msgstr "Change password"
 
-#: src/news/templates/news/index_2.html:98 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:103 src/news/templates/news/{% load
 #: static %}.html:119
 msgid "Нэр солих"
 msgstr "Change name"
 
-#: src/news/templates/news/index_2.html:101 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:106 src/news/templates/news/{% load
 #: static %}.html:122
 msgid "Имайл хаяг солих"
 msgstr "Change email address"
 
-#: src/news/templates/news/index_2.html:104 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:109 src/news/templates/news/{% load
 #: static %}.html:125
 msgid "Системээс гарах"
 msgstr "Log-out"
 
-#: src/news/templates/news/index_2.html:108 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:113 src/news/templates/news/{% load
 #: static %}.html:129 %}.html:233
 msgid "Нэвтрэх"
 msgstr "Log-in"
 
-#: src/news/templates/news/index_2.html:111 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:116 src/news/templates/news/{% load
 #: static %}.html:132
 msgid "Гишүүнээр бүртгүүлэх"
 msgstr "Register as a member"
 
-#: src/news/templates/news/index_2.html:116 src/news/templates/news/{% load
+#: src/news/templates/news/index_2.html:121
+msgid "Хүний нөөц"
+msgstr ""
+
+#: src/news/templates/news/index_2.html:122 src/news/templates/news/{% load
 #: static %}.html:110 %}.html:277 %}.html:337
 msgid "Холбоо барих"
 msgstr "Contact us"
+
+#: src/news/templates/news/{% load static %}.html:87
+msgid "Түүхэн замнал"
+msgstr "Timeline"
 
 #: src/news/templates/news/{% load static %}.html:231
 msgid " Тавтай морилно уу."

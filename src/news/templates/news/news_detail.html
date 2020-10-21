@@ -40,7 +40,7 @@
         <li>Он сар: {{ news.created_on|naturalday:'Y-m-d'}}</li>
         <li>Бүлэг : {{ news.category }}</li>
         <li>Ниитэлсэн : {{ news.author }}</li>
-        <li>Үзсэн : {% get_hit_count for object%}</li>
+        {% comment %} <li>Үзсэн : {% get_hit_count for object%}</li> {% endcomment %}
       </ul>
 
     </div>
@@ -54,15 +54,7 @@
     </div>
 
     <div class="col-lg-4">
-      <div class="promo-text-blog">Хайх....</div>
 
-      <form action="#" class="searchform order-lg-last">
-        <div class="form-group d-flex">
-          <input type="text" name="search_text" placeholder="Энд хайх утгаа оруулна уу." class="form-control"
-            value="{{ search_text }}">
-
-        </div>
-      </form>
       <!-- Ontsloh medee -->
       <div class="promo-text-blog"></div>
       <div class="list-group">
@@ -74,12 +66,40 @@
       </div>
 
       <!-- Category bvleglel-->
-      <div class="promo-text-blog">Бүлэгүүд</div>
-      {% for category in category_list %}
-      <ul class="blog-category">
-        <li style="margin-bottom: 50px;"><i class="fa fa-angle-right"></i> <a href="#">{{category}}</a></li>
-      </ul>
-      {% endfor %}
+
+      <div class="widget clearfix notopborder">
+        <div class="tabs nobottommargin clearfix ui-tabs ui-widget ui-widget-content ui-corner-all" id="sidebar=tabs">
+          <ul class="tab-nav clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+            role="tablist">
+            <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0"
+              aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a
+                href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Сүүлд
+                нэмэгдсэн</a></li>
+
+          </ul>
+          <div class="tab-container">
+            <div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-1"
+              aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
+              <div id="popular-post-list-sidebar">
+                {% for news in latest|slice:"0:6" %}
+                <div class="row spost clearfix">
+                  <div class="col-md-4 entry-image">
+                    <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}" class="nobg"> <img
+                        src="{% if news.image %}{{news.image.url}}{% endif %}" alt="IMG" height="200" width="140"> </a>
+                  </div>
+                  <div class="col-md-8 entry-c">
+                    <div class="entry-title">
+                      <h4> <a href="{% if news %}{% url 'news-news-detail' news.slug  %} {% endif %}">
+                          {{ news.title }} </a> </h4>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

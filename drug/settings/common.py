@@ -87,7 +87,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.i18n",
-                'src.base.context_processors.extras',
+                "src.base.context_processors.extras",
             ],
         },
     },
@@ -150,8 +150,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, "src", "base", "locale")]
-
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
+print("*****", LOCALE_PATHS)
 LANGUAGES = [
     ("mn", _("Mongolia")),
     ("en", _("English")),

@@ -50,33 +50,6 @@ class Homepage(generic.ListView):
 
         return context
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(Homepage, self).get_context_data(**kwargs)
-    #     context['category_list'] = Category.objects.all()
-    #     context['research'] = Research.objects.all().order_by('-created_on')
-    #     context['lesson'] = Courses.objects.all().order_by('-created_on')
-
-    #     return context
-
-
-class TimeLine(generic.ListView):
-    template_name = "news/timeline.html"
-    queryset = News.objects.all().order_by("created_on")
-    paginate_by = 6
-
-    def get_context_data(self, **kwargs):
-        context = super(TimeLine, self).get_context_data(**kwargs)
-        context["special"] = News.objects.filter(is_special="True")
-        context["category"] = Course.objects.all()
-        context["news"] = News.objects.all().order_by("-created_on")
-
-        return context
-
-
-# class BasePage(TemplateView):
-#     queryset = News.objects.all().order_by('-created_on')
-#     template_name = "poll/base.html"
-
 
 class AboutPage(TemplateView):
     template_name = "news/aboutus.html"
@@ -94,9 +67,5 @@ class AboutPage(TemplateView):
         return context
 
 
-class Greetings(TemplateView):
-    template_name = "news/greetings.html"
-
-
 class Service(TemplateView):
-    template_name = "news/service.html"
+    template_name = "website/service.html"
