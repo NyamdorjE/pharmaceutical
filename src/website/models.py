@@ -142,14 +142,19 @@ class aboutpagemission(models.Model):
 
 class Carousel(models.Model):
     alt_text = models.CharField(
-        max_length=255, verbose_name=_("Carousel image alt text")
+        max_length=255, verbose_name=_("Carousel image alt text"), null=True, blank=True
     )
     image = models.ImageField(upload_to="media/Carousel")
-    title = models.CharField(max_length=255, verbose_name=_("Carousel Title"))
-    description = models.CharField(max_length=500, verbose_name=_("Description"))
+    title = models.CharField(
+        max_length=255, verbose_name=_("Carousel Title"), null=True, blank=True
+    )
+    description = models.CharField(
+        max_length=500, verbose_name=_("Description"), null=True, blank=True
+    )
+    position = models.IntegerField(
+        help_text=("Оруулсан зураг хэдэд байрлахыг зааж өгнө ")
+    )
 
     class Meta:
         verbose_name = _("Carousel")
-
-    def __str__(self):
-        return self.title
+        ordering = ["position"]
