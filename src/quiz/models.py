@@ -115,12 +115,8 @@ class Quiz(models.Model):
 
     single_attempt = models.BooleanField(
         blank=False,
-        default=False,
-        help_text=_(
-            "If yes, only one attempt by"
-            " a user will be permitted."
-            " Non users cannot sit this exam."
-        ),
+        default=True,
+        help_text=_("Энэ талбарыг сонгох юм бол сурагч 1 удаа л шалгалтыг өгнө "),
         verbose_name=_("Single Attempt"),
     )
 
@@ -270,11 +266,7 @@ class Progress(models.Model):
         return output
 
     def update_score(self, question, score_to_add=0, possible_to_add=0):
-        """
-        Pass in question object, amount to increase score
-        and max possible.
-        Does not return anything.
-        """
+
         category_test = Category.objects.filter(category=question.category).exists()
 
         if any(
